@@ -16,48 +16,55 @@ function App() {
     return IconComponent ? <IconComponent className={className} /> : null;
   };
 
-  const HeroSection = () => (
-    <div className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-black">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={HERO_CONTENT.backgroundImage}
-          alt="Clinic Background" 
-          className="w-full h-full object-cover opacity-40"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
-      </div>
+ const HeroSection = () => (
+  <div className="relative min-h-[85vh] md:min-h-[90vh] flex items-center pt-16 overflow-hidden bg-black">
+    {/* Background Image with Overlay */}
+    <div className="absolute inset-0 z-0">
+      <img 
+        src={HERO_CONTENT.backgroundImage}
+        alt="Clinic Background" 
+        className="w-full h-full object-cover opacity-40"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+    </div>
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="max-w-3xl space-y-8 animate-fade-in-up">
-          <div className="inline-block mb-4">
-             <BrandLogo className="h-24 md:h-32 w-auto" isDark={true} />
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-            {HERO_CONTENT.title} <span className="text-emerald-500">{HERO_CONTENT.highlight}</span>
-          </h1>
-          <p className="text-xl text-slate-300 leading-relaxed">
-             {HERO_CONTENT.description}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <button 
-              onClick={() => setCurrentPage(PageView.SERVICES)}
-              className="px-8 py-4 bg-emerald-600 text-white rounded-full font-semibold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/25 flex items-center justify-center gap-2 group"
-            >
-              {HERO_CONTENT.buttonPrimary}
-              <Icons.ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button 
-               onClick={() => setCurrentPage(PageView.CONTACT)}
-              className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-full font-semibold hover:bg-white/20 transition-all flex items-center justify-center"
-            >
-              {HERO_CONTENT.buttonSecondary}
-            </button>
-          </div>
+    <div className="container mx-auto px-4 lg:px-8 relative z-10">
+      {/* Reduced max-width and spacing to keep elements compact */}
+      <div className="max-w-2xl space-y-6 animate-fade-in-up">
+        <div className="inline-block mb-2">
+           {/* Fixed: Reduced logo height from h-32 to h-16/20 */}
+           <BrandLogo className="h-16 md:h-20 w-auto" isDark={true} />
+        </div>
+        
+        {/* Fixed: Scaled down from 6xl to 5xl for better desktop balance */}
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
+          {HERO_CONTENT.title} <span className="text-emerald-500">{HERO_CONTENT.highlight}</span>
+        </h1>
+        
+        {/* Fixed: Reduced description size for better hierarchy */}
+        <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl">
+           {HERO_CONTENT.description}
+        </p>
+        
+        <div className="flex flex-col sm:flex-row gap-4 pt-4">
+          <button 
+            onClick={() => setCurrentPage(PageView.SERVICES)}
+            className="px-6 py-3.5 bg-emerald-600 text-white rounded-full font-semibold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/25 flex items-center justify-center gap-2 group"
+          >
+            {HERO_CONTENT.buttonPrimary}
+            <Icons.ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          </button>
+          <button 
+             onClick={() => setCurrentPage(PageView.CONTACT)}
+            className="px-6 py-3.5 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-full font-semibold hover:bg-white/20 transition-all flex items-center justify-center"
+          >
+            {HERO_CONTENT.buttonSecondary}
+          </button>
         </div>
       </div>
     </div>
-  );
+  </div>
+);
 
   const DivisionsPreview = () => (
     <section className="py-24 bg-white">
