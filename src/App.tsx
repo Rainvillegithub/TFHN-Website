@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Navbar } from './components/Navbar';
-import { Footer } from './components/Footer';
-import { ChatWidget } from './components/ChatWidget';
+import { Navbar } from './Navbar';
+import { Footer } from './Footer';
+import { ChatWidget } from './ChatWidget';
 import { PageView } from './types';
 import { DIVISIONS, TESTIMONIALS, TEAM_MEMBERS, PILLARS, HERO_CONTENT } from './constants';
-import { Icons } from './components/Icons';
-import { BrandLogo } from './components/BrandLogo';
+import { Icons } from './Icons';
+import { BrandLogo } from './BrandLogo';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<PageView>(PageView.HOME);
