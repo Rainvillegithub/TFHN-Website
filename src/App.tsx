@@ -4,8 +4,10 @@ import { Footer } from './components/Footer';
 import { ChatWidget } from './components/ChatWidget';
 import { Icons } from './components/Icons';
 import { BrandLogo } from './components/BrandLogo';
+import { AboutView } from './components/AboutView';
+import { ContactView } from './components/ContactView';
 import { PageView } from './types';
-import { DIVISIONS, TESTIMONIALS, TEAM_MEMBERS, PILLARS, HERO_CONTENT } from './constants';
+import { DIVISIONS, TESTIMONIALS, PILLARS, HERO_CONTENT } from './constants';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<PageView>(PageView.HOME);
@@ -16,55 +18,56 @@ function App() {
     return IconComponent ? <IconComponent className={className} /> : null;
   };
 
- const HeroSection = () => (
-  <div className="relative min-h-[85vh] md:min-h-[90vh] flex items-center pt-16 overflow-hidden bg-black">
-    {/* Background Image with Overlay */}
-    <div className="absolute inset-0 z-0">
-      <img 
-        src={HERO_CONTENT.backgroundImage}
-        alt="Clinic Background" 
-        className="w-full h-full object-cover opacity-40"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
-    </div>
+  const HeroSection = () => (
+    <div className="relative min-h-[85vh] md:min-h-[90vh] flex items-center pt-16 overflow-hidden bg-black">
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={HERO_CONTENT.backgroundImage}
+          alt="Clinic Background" 
+          className="w-full h-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+      </div>
 
-    <div className="container mx-auto px-4 lg:px-8 relative z-10">
-      {/* Reduced max-width and spacing to keep elements compact */}
-      <div className="max-w-2xl space-y-6 animate-fade-in-up">
-        <div className="inline-block mb-2">
-           {/* Fixed: Reduced logo height from h-32 to h-16/20 */}
-           <BrandLogo className="h-16 md:h-20 w-auto" isDark={true} />
-        </div>
-        
-        {/* Fixed: Scaled down from 6xl to 5xl for better desktop balance */}
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
-          {HERO_CONTENT.title} <span className="text-emerald-500">{HERO_CONTENT.highlight}</span>
-        </h1>
-        
-        {/* Fixed: Reduced description size for better hierarchy */}
-        <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl">
-           {HERO_CONTENT.description}
-        </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 pt-4">
-          <button 
-            onClick={() => setCurrentPage(PageView.SERVICES)}
-            className="px-6 py-3.5 bg-emerald-600 text-white rounded-full font-semibold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/25 flex items-center justify-center gap-2 group"
-          >
-            {HERO_CONTENT.buttonPrimary}
-            <Icons.ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </button>
-          <button 
-             onClick={() => setCurrentPage(PageView.CONTACT)}
-            className="px-6 py-3.5 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-full font-semibold hover:bg-white/20 transition-all flex items-center justify-center"
-          >
-            {HERO_CONTENT.buttonSecondary}
-          </button>
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="max-w-2xl space-y-6 animate-fade-in-up">
+          <div className="inline-block mb-2">
+             <BrandLogo className="h-16 md:h-20 w-auto" isDark={true} />
+          </div>
+          
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
+            {HERO_CONTENT.title} <span className="text-emerald-500">{HERO_CONTENT.highlight}</span>
+          </h1>
+          
+          <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl">
+             {HERO_CONTENT.description}
+          </p>
+
+          <div className="flex items-center gap-2 text-emerald-500/90 font-medium text-sm md:text-base animate-fade-in">
+            <Icons.Users size={18} />
+            <span>Helping Canadian Clinic Owners achieve their Ideal Scene</span>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <button 
+              onClick={() => setCurrentPage(PageView.SERVICES)}
+              className="px-6 py-3.5 bg-emerald-600 text-white rounded-full font-semibold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/25 flex items-center justify-center gap-2 group"
+            >
+              {HERO_CONTENT.buttonPrimary}
+              <Icons.ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </button>
+            <button 
+               onClick={() => setCurrentPage(PageView.CONTACT)}
+              className="px-6 py-3.5 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-full font-semibold hover:bg-white/20 transition-all flex items-center justify-center gap-2 group"
+            >
+              <Icons.Play size={18} className="fill-current" />
+              Watch Our Story
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
 
   const DivisionsPreview = () => (
     <section className="py-24 bg-white">
@@ -77,18 +80,15 @@ function App() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 relative">
-          {/* Connector Line (Desktop) */}
           <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-slate-200 -z-10"></div>
 
           {DIVISIONS.map((division) => (
             <div key={division.id} className="relative group">
               <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 h-full flex flex-col items-center text-center">
-                {/* Number Badge */}
                 <div className="absolute -top-6 bg-emerald-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl shadow-lg ring-4 ring-white">
                   {division.step}
                 </div>
                 
-                {/* Icon */}
                 <div className="mt-8 mb-6 p-4 bg-emerald-50 rounded-2xl text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
                   {renderIcon(division.iconName, "w-10 h-10")}
                 </div>
@@ -163,11 +163,8 @@ function App() {
     <div className="animate-fade-in">
       <HeroSection />
       <DivisionsPreview />
-      
-      {/* New 4 Pillars Section */}
       <PillarsSection />
       
-      {/* Stats Section */}
       <div className="bg-slate-900 py-16 text-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -186,7 +183,6 @@ function App() {
         </div>
       </div>
 
-      {/* Why Choose Us */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -230,7 +226,6 @@ function App() {
         </div>
       </section>
 
-      {/* Testimonials */}
       <section className="py-24 bg-emerald-50">
         <div className="container mx-auto px-4 lg:px-8">
            <h2 className="text-3xl font-bold text-center text-slate-900 mb-16">Results That Speak</h2>
@@ -272,7 +267,6 @@ function App() {
        <div className="container mx-auto px-4 lg:px-8 space-y-24">
           {DIVISIONS.map((division, index) => (
             <div key={division.id} className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 lg:gap-24 items-start`}>
-               {/* Description Side */}
                <div className="flex-1 space-y-8">
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shadow-lg shadow-emerald-600/20">
@@ -308,10 +302,8 @@ function App() {
                   </button>
                </div>
 
-               {/* Visual Side (Concept) */}
                <div className="flex-1 w-full sticky top-32">
                   <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-[4/5] md:aspect-square flex items-center justify-center p-8 border border-slate-100">
-                      {/* Abstract Visual Representation */}
                       <div className="absolute inset-0 bg-slate-50"></div>
                       <div className="relative z-10 text-center">
                          <div className="w-32 h-32 mx-auto bg-emerald-100 rounded-full flex items-center justify-center mb-8">
@@ -352,166 +344,6 @@ function App() {
     </div>
   );
 
-  const AboutView = () => (
-     <div className="pt-24 pb-20 animate-fade-in bg-white">
-        <div className="container mx-auto px-4 lg:px-8">
-           <div className="max-w-4xl mx-auto mb-16 text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">About The Foot Health Network</h1>
-              <p className="text-xl text-slate-600 leading-relaxed">
-                We are the premier consulting firm for Canadian podiatrists and chiropodists, dedicated to transforming clinical excellence into business success.
-              </p>
-           </div>
-           
-           {/* Team Photo Hero */}
-           <div className="relative w-full rounded-3xl overflow-hidden mb-24 shadow-2xl bg-slate-100">
-               {/* Note: Replace this src with your specific team photo URL */}
-               <img 
-                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" 
-                 alt="The Foot Health Network Team" 
-                 className="w-full h-[500px] object-cover" 
-               />
-               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end">
-                  <div className="p-8 md:p-12 text-white">
-                     <h2 className="text-3xl font-bold mb-2">Meet Our Consultants</h2>
-                     <p className="text-emerald-300 font-medium">The experts behind your success</p>
-                  </div>
-               </div>
-           </div>
-           
-           <div className="max-w-5xl mx-auto">
-             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-               {TEAM_MEMBERS.map((member) => (
-                 <div key={member.id} className="group bg-slate-50 rounded-2xl p-6 transition-all hover:bg-white hover:shadow-xl border border-slate-100 hover:border-emerald-100">
-                    <div className="w-full aspect-square rounded-xl overflow-hidden mb-6 bg-slate-200">
-                       <img 
-                         src={member.image} 
-                         alt={member.name} 
-                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                       />
-                    </div>
-                    <div className="space-y-2">
-                       <div className="flex justify-between items-start">
-                         <div>
-                            <h3 className="font-bold text-xl text-slate-900 group-hover:text-emerald-600 transition-colors">{member.name}</h3>
-                            <p className="text-emerald-600 font-medium text-sm">{member.role}</p>
-                         </div>
-                       </div>
-                       <p className="text-slate-500 text-sm leading-relaxed pt-2">
-                          {member.bio}
-                       </p>
-                    </div>
-                 </div>
-               ))}
-             </div>
-           </div>
-
-           <div className="max-w-4xl mx-auto mt-24 prose prose-lg text-slate-600">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Our Mission</h3>
-              <p className="mb-6">
-                Founded in 2010, The Foot Health Network was born from a simple observation: excellent clinical skills don't always translate to excellent business management. We saw brilliant practitioners struggling with operational bottlenecks, compliance stress, and growth plateaus.
-              </p>
-              <p className="mb-6">
-                Our mission is to bridge that gap using our proprietary <strong>Building, Renovating, and Selling</strong> frameworks. We provide the infrastructure, strategic guidance, and tools that allow foot health professionals to focus on what they do best: patient care.
-              </p>
-           </div>
-        </div>
-     </div>
-  );
-
-  const ContactView = () => (
-    <div className="pt-24 pb-20 animate-fade-in bg-slate-50 min-h-screen">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 flex flex-col md:flex-row">
-           {/* Info Side */}
-           <div className="bg-black text-white p-12 md:w-2/5 flex flex-col justify-between">
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Let's Connect</h2>
-                <p className="text-slate-300 mb-12">
-                  Ready to optimize your practice using our proven frameworks? Schedule a discovery call today.
-                </p>
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4 group cursor-pointer">
-                    <div className="w-12 h-12 bg-emerald-900/50 rounded-full flex items-center justify-center group-hover:bg-emerald-600 transition-colors">
-                       <Icons.Phone size={20} className="text-emerald-500 group-hover:text-white transition-colors" />
-                    </div>
-                    <div>
-                      <div className="text-xs text-slate-400 uppercase tracking-wide">Phone</div>
-                      <div className="font-medium">+1 (416) 555-0199</div>
-                    </div>
-                  </div>
-                   <div className="flex items-center gap-4 group cursor-pointer">
-                    <div className="w-12 h-12 bg-emerald-900/50 rounded-full flex items-center justify-center group-hover:bg-emerald-600 transition-colors">
-                       <Icons.Mail size={20} className="text-emerald-500 group-hover:text-white transition-colors" />
-                    </div>
-                    <div>
-                      <div className="text-xs text-slate-400 uppercase tracking-wide">Email</div>
-                      <div className="font-medium">consult@foothealthnetwork.ca</div>
-                    </div>
-                  </div>
-                   <div className="flex items-center gap-4 group cursor-pointer">
-                    <div className="w-12 h-12 bg-emerald-900/50 rounded-full flex items-center justify-center group-hover:bg-emerald-600 transition-colors">
-                       <Icons.MapPin size={20} className="text-emerald-500 group-hover:text-white transition-colors" />
-                    </div>
-                    <div>
-                      <div className="text-xs text-slate-400 uppercase tracking-wide">Headquarters</div>
-                      <div className="font-medium">Toronto, Ontario</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-12 pt-12 border-t border-slate-800">
-                 <div className="flex gap-4">
-                   {/* Social Icons Placeholder */}
-                   <div className="w-10 h-10 bg-slate-900 hover:bg-emerald-600 rounded-full flex items-center justify-center transition-colors cursor-pointer text-sm font-bold">in</div>
-                   <div className="w-10 h-10 bg-slate-900 hover:bg-emerald-600 rounded-full flex items-center justify-center transition-colors cursor-pointer text-sm font-bold">x</div>
-                   <div className="w-10 h-10 bg-slate-900 hover:bg-emerald-600 rounded-full flex items-center justify-center transition-colors cursor-pointer text-sm font-bold">f</div>
-                 </div>
-              </div>
-           </div>
-
-           {/* Form Side */}
-           <div className="p-12 md:w-3/5 bg-white">
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">Send us a message</h3>
-              <p className="text-slate-500 mb-8">Tell us which stage your practice is in.</p>
-              
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                 <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                       <label className="text-sm font-semibold text-slate-700">First Name</label>
-                       <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all" placeholder="Jane" />
-                    </div>
-                     <div className="space-y-2">
-                       <label className="text-sm font-semibold text-slate-700">Last Name</label>
-                       <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all" placeholder="Doe" />
-                    </div>
-                 </div>
-                 <div className="space-y-2">
-                    <label className="text-sm font-semibold text-slate-700">Email Address</label>
-                    <input type="email" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all" placeholder="jane@clinic.com" />
-                 </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-slate-700">Interest Area</label>
-                    <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all bg-white">
-                      <option>Building (New Practice)</option>
-                      <option>Renovating (Optimization)</option>
-                      <option>Selling (Exit Strategy)</option>
-                      <option>Other Inquiry</option>
-                    </select>
-                 </div>
-                 <div className="space-y-2">
-                    <label className="text-sm font-semibold text-slate-700">How can we help?</label>
-                    <textarea rows={4} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all" placeholder="Tell us about your practice needs..."></textarea>
-                 </div>
-                 <button className="w-full bg-emerald-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-emerald-700 shadow-xl shadow-emerald-600/20 transition-all transform hover:-translate-y-0.5">
-                    Send Message
-                 </button>
-              </form>
-           </div>
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-emerald-200 selection:text-emerald-900">
       <Navbar currentPage={currentPage} onNavigate={setCurrentPage} />
@@ -519,13 +351,11 @@ function App() {
       <main>
         {currentPage === PageView.HOME && <HomeView />}
         {currentPage === PageView.SERVICES && <ServicesView />}
-        {currentPage === PageView.ABOUT && <AboutView />}
+        {currentPage === PageView.ABOUT && <AboutView onNavigate={setCurrentPage} />}
         {currentPage === PageView.CONTACT && <ContactView />}
       </main>
 
       <Footer onNavigate={setCurrentPage} />
-      
-      {/* AI Consultant Widget */}
       <ChatWidget />
     </div>
   );

@@ -2,10 +2,10 @@
 import { ServiceItem, Testimonial, Division, TeamMember, Pillar, HeroContent } from './types';
 
 export const HERO_CONTENT: HeroContent = {
-  title: "Guiding Private Practices to Their",
-  highlight: "Ideal Scene",
-  description: "Whether you are starting from scratch, fixing your flow, or preparing for a lucrative exit, we provide the blueprint for every stage of your clinic's lifecycle.",
-  backgroundImage: "https://picsum.photos/seed/modernclinicarch/1920/1080", // Change this URL to your specific hero image
+  title: "Enhance Your Practice,",
+  highlight: "Enrich Your Life!",
+  description: "We provide the blueprint for every stage of your clinic's lifecycle for startup, growth, or exit focused on both profitability and your personal freedom.",
+  backgroundImage: "/images/hero-bg.jpg", // Local clinic hallway photo
   buttonPrimary: "Explore Our Frameworks",
   buttonSecondary: "Book a Strategy Call"
 };
@@ -145,46 +145,52 @@ export const PILLARS: Pillar[] = [
 
 export const TEAM_MEMBERS: TeamMember[] = [
   {
-    id: 'tm1',
-    name: 'Practice Development Lead',
-    role: 'Building Division Expert',
-    bio: 'Specializing in helping new clinics establish strong foundations and efficient workflows from day one.',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400'
+    id: 'patrick-rainville',
+    name: 'Patrick Rainville',
+    role: 'Co-founder, Build Lead',
+    credibility: 'Startup & scale, 30 years experience',
+    bio: 'Coordinates firm-wide strategy with 30 years of experience helping clinic owners navigate startup and scaling phases.',
+    image: '/images/patrick.png'
   },
   {
-    id: 'tm2',
-    name: 'Clinical Operations Director',
-    role: 'Renovating Division Expert',
-    bio: 'Expert in streamlining clinical procedures and enhancing patient retention strategies for established practices.',
-    image: 'https://images.unsplash.com/photo-1573496359-7013ac2bebb5?auto=format&fit=crop&q=80&w=400'
+    id: 'tina-rainville',
+    name: 'Tina Rainville',
+    role: 'Co-founder, Build Operations',
+    credibility: 'Operations & Finance (CFO of RCPC)',
+    bio: 'Leads operations and finance for the Build division, ensuring foundational stability and effective clinic launches.',
+    image: '/images/tina.png'
   },
   {
-    id: 'tm3',
-    name: 'HR & Staffing Specialist',
-    role: 'Team Optimization Lead',
-    bio: 'Dedicated to helping clinics hire, train, and retain top-tier talent aligned with the business vision.',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400'
+    id: 'dave-simard',
+    name: 'Dave Simard',
+    role: 'Co-founder, Renovate Lead',
+    credibility: 'Operations streamlining',
+    bio: 'Expert in streamlining operations and strategic planning, guiding established clinics through critical growth transitions.',
+    image: '/images/dave.png'
   },
   {
-    id: 'tm4',
-    name: 'Strategic Business Advisor',
-    role: 'Selling & Exit Planning',
-    bio: 'Focuses on practice valuation and creating strategic roadmaps for profitable business exits.',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400'
+    id: 'jodi-simard',
+    name: 'Jodi Simard',
+    role: 'Co-founder, Renovate Operations',
+    credibility: 'Four Pillars alignment',
+    bio: 'Focuses on aligning practices with the Four Pillars framework, optimizing patient growth and team culture.',
+    image: '/images/jody.png'
   },
   {
-    id: 'tm5',
-    name: 'Financial Systems Expert',
-    role: 'Profitability Consultant',
-    bio: 'Transforms financial chaos into clarity, ensuring practices maximize revenue and minimize waste.',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400'
+    id: 'peter-ferguson',
+    name: 'Peter Ferguson',
+    role: 'Co-founder, Sell Lead',
+    credibility: 'Succession & valuation',
+    bio: 'Leads the Sell division, helping podiatrists navigate successful career transitions, practice valuations, and exits.',
+    image: '/images/peter.png?v=3'
   },
   {
-    id: 'tm6',
-    name: 'Marketing & Growth Lead',
-    role: 'Patient Acquisition',
-    bio: 'Specializes in ethical marketing strategies that attract ideal patients to your clinic.',
-    image: 'https://images.unsplash.com/photo-1598550874175-4d7112ee7f38?auto=format&fit=crop&q=80&w=400'
+    id: 'kathy-ferguson',
+    name: 'Kathy Ferguson',
+    role: 'Co-founder, Sell Operations',
+    credibility: 'Transition planning',
+    bio: 'Specializes in transition planning, ensuring a smooth handoff and maximum value realization for practice owners.',
+    image: '/images/kathy.png?v=3'
   }
 ];
 

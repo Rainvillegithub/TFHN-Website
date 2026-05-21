@@ -7,6 +7,7 @@ import {
   GraduationCap,
   Menu,
   X,
+  Play,
   MessageSquare,
   Send,
   ChevronRight,
@@ -26,7 +27,8 @@ import {
   Calendar,
   Magnet,
   Heart,
-  BarChart3
+  BarChart3,
+  LayoutGrid
 } from 'lucide-react';
 
 export const Icons = {
@@ -38,6 +40,7 @@ export const Icons = {
   GraduationCap,
   Menu,
   X,
+  Play,
   MessageSquare,
   Send,
   ChevronRight,
@@ -57,5 +60,6 @@ export const Icons = {
   Calendar,
   Magnet,
   Heart,
-  BarChart3
+  BarChart3,
+  LayoutGrid
 };

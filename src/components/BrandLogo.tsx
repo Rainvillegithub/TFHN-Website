@@ -13,15 +13,19 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   showText = true 
 }) => {
   const textColor = isDark ? "#FFFFFF" : "#0F172A"; // White or Slate-900
-  const accentColor = "#10B981"; // Emerald-500
-
-  // The logo is a grid. 
-  // Text on left: The / Foot / Health / Network
-  // Squares on right: 4 / 3 / 2 / 1 descending alignment
   
+  // Emerald colors from brightest to darkest for the gradient
+  const colors = [
+    "#6EE7B7", // Emerald 300
+    "#34D399", // Emerald 400
+    "#10B981", // Emerald 500
+    "#059669", // Emerald 600
+    "#047857"  // Emerald 700
+  ];
+
   return (
     <svg 
-      viewBox="0 0 310 200" 
+      viewBox="0 0 320 190" 
       fill="none" 
       xmlns="http://www.w3.org/2000/svg" 
       className={className}
@@ -30,39 +34,38 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
       {/* Text Group */}
       {showText && (
         <g style={{ fontStyle: 'normal' }}>
-          <text x="0" y="45" fill={textColor} fontSize="32" fontFamily="Arial, sans-serif" fontWeight="bold">The</text>
-          <text x="0" y="90" fill={textColor} fontSize="42" fontFamily="Arial, sans-serif" fontWeight="bold" letterSpacing="-1">Foot</text>
-          <text x="0" y="135" fill={textColor} fontSize="42" fontFamily="Arial, sans-serif" fontWeight="bold" letterSpacing="-1">Health</text>
-          <text x="0" y="180" fill={textColor} fontSize="42" fontFamily="Arial, sans-serif" fontWeight="bold" letterSpacing="-1">Network</text>
+          <text x="0" y="38" fill={textColor} fontSize="28" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800">The</text>
+          <text x="0" y="82" fill={textColor} fontSize="48" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" letterSpacing="-1.5">Foot</text>
+          <text x="0" y="126" fill={textColor} fontSize="48" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" letterSpacing="-1.5">Health</text>
+          <text x="0" y="170" fill={textColor} fontSize="48" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" letterSpacing="-1.5">Network</text>
         </g>
       )}
 
       {/* 
-        Grid Group 
-        Assuming a grid of approx 40x40 squares with gaps.
-        Right aligned relative to the text block.
-        Let's position them to the right of the text.
-        Text width is approx 160px for "Network".
-        Let's start grid at x=180.
+        Grid Group - Refactored to match reference
+        Row 1: 4 Squares (Starts after "The")
+        Row 2: 3 Squares (Starts after "Foot")
+        Row 3: 2 Squares (Starts after "Health")
+        Row 4: 1 Square  (Starts after "Network")
       */}
-      <g transform="translate(150, 10)">
+      <g transform="translate(0, 0)">
         {/* Row 1: 4 Squares */}
-        <rect x="0" y="0" width="35" height="35" fill={accentColor} />
-        <rect x="40" y="0" width="35" height="35" fill={accentColor} />
-        <rect x="80" y="0" width="35" height="35" fill={accentColor} />
-        <rect x="120" y="0" width="35" height="35" fill={accentColor} />
+        <rect x="70" y="5" width="38" height="38" rx="2" fill={colors[0]} />
+        <rect x="115" y="5" width="38" height="38" rx="2" fill={colors[1]} />
+        <rect x="160" y="5" width="38" height="38" rx="2" fill={colors[1]} />
+        <rect x="205" y="5" width="38" height="38" rx="2" fill={colors[2]} />
 
         {/* Row 2: 3 Squares */}
-        <rect x="40" y="45" width="35" height="35" fill={accentColor} />
-        <rect x="80" y="45" width="35" height="35" fill={accentColor} />
-        <rect x="120" y="45" width="35" height="35" fill={accentColor} />
+        <rect x="115" y="49" width="38" height="38" rx="2" fill={colors[1]} />
+        <rect x="160" y="49" width="38" height="38" rx="2" fill={colors[2]} />
+        <rect x="205" y="49" width="38" height="38" rx="2" fill={colors[2]} />
 
         {/* Row 3: 2 Squares */}
-        <rect x="80" y="90" width="35" height="35" fill={accentColor} />
-        <rect x="120" y="90" width="35" height="35" fill={accentColor} />
+        <rect x="160" y="93" width="38" height="38" rx="2" fill={colors[2]} />
+        <rect x="205" y="93" width="38" height="38" rx="2" fill={colors[3]} />
 
         {/* Row 4: 1 Square */}
-        <rect x="120" y="135" width="35" height="35" fill={accentColor} />
+        <rect x="205" y="137" width="38" height="38" rx="2" fill={colors[4]} />
       </g>
     </svg>
   );

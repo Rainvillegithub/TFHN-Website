@@ -68,15 +68,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <ul className="space-y-4 text-slate-400">
               <li className="flex items-start gap-3">
                 <Icons.MapPin className="mt-1 text-emerald-500 shrink-0" size={18} />
-                <span>123 Bay Street, Suite 400<br/>Toronto, ON M5J 2R8</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Icons.Phone className="text-emerald-500 shrink-0" size={18} />
-                <span>+1 (416) 555-0199</span>
+                <span>Timmins, Ontario</span>
               </li>
               <li className="flex items-center gap-3">
                 <Icons.Mail className="text-emerald-500 shrink-0" size={18} />
-                <span>info@foothealthnetwork.ca</span>
+                <span>info@tfhn.ca</span>
               </li>
             </ul>
           </div>

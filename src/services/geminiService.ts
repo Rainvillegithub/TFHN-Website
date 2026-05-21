@@ -1,6 +1,18 @@
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+// Initialize AI lazily to prevent crash if key is missing at load time
+let ai: any = null;
+const getAI = () => {
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+  if (!apiKey) {
+    console.warn("VITE_GEMINI_API_KEY is missing. Chat features will be disabled.");
+    return null;
+  }
+  if (!ai) {
+    ai = new GoogleGenAI({ apiKey });
+  }
+  return ai;
+};
 
 const SYSTEM_INSTRUCTION = `
 You are the "FHN Virtual Consultant", an AI assistant for The Foot Health Network.
@@ -20,10 +32,15 @@ export const sendMessageToGemini = async (
   newMessage: string
 ): Promise<string> => {
   try {
+    const aiInstance = getAI();
+    if (!aiInstance) {
+      return "The AI consultant is currently offline. Please set up the API key in .env to enable it.";
+    }
+
     const chatHistory = history.map(h => `${h.role === 'user' ? 'User' : 'Model'}: ${h.text}`).join('\n');
     const prompt = `${SYSTEM_INSTRUCTION}\n\nChat History:\n${chatHistory}\nUser: ${newMessage}\nModel:`;
 
-    const response = await ai.models.generateContent({
+    const response = await aiInstance.models.generateContent({
       model: 'gemini-2.5-flash',
       contents: prompt,
     });

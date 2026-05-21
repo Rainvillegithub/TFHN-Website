@@ -41,8 +41,10 @@ export interface TeamMember {
   id: string;
   name: string;
   role: string;
+  credibility?: string;
   bio: string;
   image: string;
+  videoUrl?: string;
 }
 
 export interface ChatMessage {
