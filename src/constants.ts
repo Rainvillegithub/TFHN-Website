@@ -6,8 +6,8 @@ export const HERO_CONTENT: HeroContent = {
   highlight: "Foot Care Practice?",
   description: "We help Canadian chiropodists and podiatrists exit on their terms — confidentially connecting sellers with qualified buyers, and guiding both sides through the transition with the right professional team.",
   backgroundImage: "/images/hero-bg.jpg", // Local clinic hallway photo
-  buttonPrimary: "Start a Confidential Conversation",
-  buttonSecondary: "I'm Looking to Acquire"
+  buttonPrimary: "I Want to Sell",
+  buttonSecondary: "I Want to Acquire"
 };
 
 // Flywheel order: every transaction starts with a sale, then the buyer

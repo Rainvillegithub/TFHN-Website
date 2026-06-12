@@ -56,15 +56,17 @@ function App() {
               onClick={() => setCurrentPage(PageView.CONTACT)}
               className="px-6 py-3.5 bg-emerald-600 text-white rounded-full font-semibold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/25 flex items-center justify-center gap-2 group"
             >
+              <Icons.Key size={18} />
               {HERO_CONTENT.buttonPrimary}
               <Icons.ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </button>
             <button
                onClick={() => setCurrentPage(PageView.BUYERS)}
-              className="px-6 py-3.5 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-full font-semibold hover:bg-white/20 transition-all flex items-center justify-center gap-2 group"
+              className="px-6 py-3.5 bg-white text-emerald-900 rounded-full font-semibold hover:bg-emerald-50 transition-all shadow-lg flex items-center justify-center gap-2 group"
             >
               <Icons.Briefcase size={18} />
               {HERO_CONTENT.buttonSecondary}
+              <Icons.ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>
