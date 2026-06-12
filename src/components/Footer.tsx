@@ -19,7 +19,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                <BrandLogo className="h-16" isDark={true} />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Empowering Canadian podiatrists and foot health professionals with world-class consulting, training, and operational strategies.
+              Canada's practice transition advisory for chiropodists and podiatrists — confidentially connecting sellers and buyers, and supporting new owners from acquisition to profitability.
             </p>
             <div className="flex gap-4">
               {/* Social placeholders */}
@@ -40,10 +40,19 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <button onClick={() => onNavigate(PageView.HOME)} className="hover:text-white transition-colors">Home</button>
               </li>
               <li>
-                <button onClick={() => onNavigate(PageView.ABOUT)} className="hover:text-white transition-colors">About Us</button>
+                <button onClick={() => onNavigate(PageView.OPPORTUNITIES)} className="hover:text-white transition-colors">Opportunities</button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate(PageView.BUYERS)} className="hover:text-white transition-colors">For Buyers</button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate(PageView.HOW_IT_WORKS)} className="hover:text-white transition-colors">How It Works</button>
               </li>
               <li>
                 <button onClick={() => onNavigate(PageView.SERVICES)} className="hover:text-white transition-colors">Our Services</button>
+              </li>
+              <li>
+                <button onClick={() => onNavigate(PageView.ABOUT)} className="hover:text-white transition-colors">About Us</button>
               </li>
               <li>
                 <button onClick={() => onNavigate(PageView.CONTACT)} className="hover:text-white transition-colors">Contact</button>
@@ -53,12 +62,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-lg mb-6">Services</h4>
+            <h4 className="font-semibold text-lg mb-6">What We Do</h4>
             <ul className="space-y-4 text-slate-400">
-              <li className="hover:text-white transition-colors cursor-pointer">Practice Optimization</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Staff Training</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Compliance Audits</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Marketing Strategy</li>
+              <li className="hover:text-white transition-colors cursor-pointer">Confidential Practice Sales</li>
+              <li className="hover:text-white transition-colors cursor-pointer">Buyer Matching &amp; Registration</li>
+              <li className="hover:text-white transition-colors cursor-pointer">New-Owner Clinic Launch</li>
+              <li className="hover:text-white transition-colors cursor-pointer">Profitability Coaching</li>
             </ul>
           </div>
 
@@ -77,6 +86,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </ul>
           </div>
         </div>
+
+        <p className="text-slate-600 text-xs leading-relaxed mb-8 max-w-3xl">
+          The Foot Health Network is a practice transition advisory and consulting firm. We are not a licensed
+          real estate or business brokerage. Transactions are formalized by each party's licensed accounting
+          and legal professionals.
+        </p>
 
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
           <p>&copy; {new Date().getFullYear()} The Foot Health Network. All rights reserved.</p>

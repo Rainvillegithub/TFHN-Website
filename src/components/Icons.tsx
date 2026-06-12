@@ -28,7 +28,9 @@ import {
   Magnet,
   Heart,
   BarChart3,
-  LayoutGrid
+  LayoutGrid,
+  Lock,
+  MessageCircle
 } from 'lucide-react';
 
 export const Icons = {
@@ -61,5 +63,7 @@ export const Icons = {
   Magnet,
   Heart,
   BarChart3,
-  LayoutGrid
+  LayoutGrid,
+  Lock,
+  MessageCircle
 };

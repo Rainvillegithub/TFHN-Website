@@ -5,7 +5,7 @@ export const ContactView: React.FC = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [interestArea, setInterestArea] = useState('Building (New Practice)');
+  const [interestArea, setInterestArea] = useState('Selling my practice');
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -84,7 +84,7 @@ export const ContactView: React.FC = () => {
       setFirstName('');
       setLastName('');
       setEmail('');
-      setInterestArea('Building (New Practice)');
+      setInterestArea('Selling my practice');
       setMessage('');
     } catch (error: any) {
       console.error('Contact Form Error:', error);
@@ -102,7 +102,8 @@ export const ContactView: React.FC = () => {
               <div>
                 <h2 className="text-3xl font-bold mb-6">Let's Connect</h2>
                 <p className="text-slate-300 mb-12">
-                  Ready to optimize your practice using our proven frameworks? Schedule a discovery call today.
+                  Selling, buying, or operating — every conversation starts confidentially.
+                  Your staff and patients hear nothing until you decide.
                 </p>
                 <div className="space-y-6">
                    <div className="flex items-center gap-4 group cursor-pointer">
@@ -137,7 +138,7 @@ export const ContactView: React.FC = () => {
            {/* Form Side */}
            <div className="p-12 md:w-3/5 bg-white">
               <h3 className="text-2xl font-bold text-slate-900 mb-2">Send us a message</h3>
-              <p className="text-slate-500 mb-8">Tell us which stage your practice is in.</p>
+              <p className="text-slate-500 mb-8">Tell us whether you're looking to sell, buy, or grow.</p>
               
               {status === 'success' && (
                 <div className="mb-6 p-4 bg-emerald-50 text-emerald-800 rounded-2xl border border-emerald-100 flex items-center gap-3">
@@ -202,9 +203,11 @@ export const ContactView: React.FC = () => {
                        onChange={(e) => setInterestArea(e.target.value)}
                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all bg-white"
                      >
-                       <option>Building (New Practice)</option>
-                       <option>Renovating (Optimization)</option>
-                       <option>Selling (Exit Strategy)</option>
+                       <option>Selling my practice</option>
+                       <option>Buying a practice</option>
+                       <option>Inquiring about a featured opportunity</option>
+                       <option>Building (bringing a new clinic online)</option>
+                       <option>Renovating (profitability coaching)</option>
                        <option>Other Inquiry</option>
                      </select>
                   </div>

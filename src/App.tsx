@@ -6,8 +6,11 @@ import { Icons } from './components/Icons';
 import { BrandLogo } from './components/BrandLogo';
 import { AboutView } from './components/AboutView';
 import { ContactView } from './components/ContactView';
+import { OpportunitiesView } from './components/OpportunitiesView';
+import { BuyersView } from './components/BuyersView';
+import { HowItWorksView } from './components/HowItWorksView';
 import { PageView } from './types';
-import { DIVISIONS, TESTIMONIALS, PILLARS, HERO_CONTENT } from './constants';
+import { DIVISIONS, TESTIMONIALS, PILLARS, HERO_CONTENT, OPPORTUNITIES, MARKET_STATS } from './constants';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<PageView>(PageView.HOME);
@@ -44,24 +47,24 @@ function App() {
           </p>
 
           <div className="flex items-center gap-2 text-emerald-500/90 font-medium text-sm md:text-base animate-fade-in">
-            <Icons.Users size={18} />
-            <span>Helping Canadian Clinic Owners achieve their Ideal Scene</span>
+            <Icons.ShieldCheck size={18} />
+            <span>Confidential practice transitions, coast to coast</span>
           </div>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <button 
-              onClick={() => setCurrentPage(PageView.SERVICES)}
+            <button
+              onClick={() => setCurrentPage(PageView.CONTACT)}
               className="px-6 py-3.5 bg-emerald-600 text-white rounded-full font-semibold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/25 flex items-center justify-center gap-2 group"
             >
               {HERO_CONTENT.buttonPrimary}
               <Icons.ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </button>
-            <button 
-               onClick={() => setCurrentPage(PageView.CONTACT)}
+            <button
+               onClick={() => setCurrentPage(PageView.BUYERS)}
               className="px-6 py-3.5 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-full font-semibold hover:bg-white/20 transition-all flex items-center justify-center gap-2 group"
             >
-              <Icons.Play size={18} className="fill-current" />
-              Watch Our Story
+              <Icons.Briefcase size={18} />
+              {HERO_CONTENT.buttonSecondary}
             </button>
           </div>
         </div>
@@ -73,9 +76,10 @@ function App() {
     <section className="py-24 bg-white">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">The Three Stages of Success</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">One Transition. Three Teams.</h2>
           <p className="text-lg text-slate-600 leading-relaxed">
-            We don't just offer random advice. We utilize structured, trademarked frameworks designed for the three critical stages of a practice owner's journey.
+            Every practice sale creates a new owner. Our Sell team guides the exit, our Build team brings
+            the clinic online under new ownership, and our Renovate team coaches it to peak profitability.
           </p>
         </div>
 
@@ -159,21 +163,59 @@ function App() {
     </section>
   );
 
+  const FeaturedOpportunities = () => (
+    <section className="py-24 bg-slate-50">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Featured Opportunities</h2>
+          <p className="text-lg text-slate-600 leading-relaxed">
+            Confidential, anonymized profiles of Canadian foot care practices in transition.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
+          {OPPORTUNITIES.filter(o => o.status === 'available').slice(0, 3).map((opp) => (
+            <div key={opp.id} className="bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-8 flex flex-col">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2.5 bg-emerald-50 rounded-xl text-emerald-600">
+                  {opp.visibility === 'gated' ? <Icons.Lock className="w-5 h-5" /> : <Icons.MapPin className="w-5 h-5" />}
+                </div>
+                <div>
+                  <div className="font-bold text-slate-900 text-sm">{opp.region}</div>
+                  <div className="text-xs text-slate-400 uppercase tracking-wider">Ref. {opp.id}</div>
+                </div>
+              </div>
+              <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">{opp.highlight}</p>
+              <div className="text-sm font-semibold text-emerald-700 mb-1">
+                {opp.visibility === 'public' ? `Revenue: ${opp.revenueBand}` : 'Details for qualified buyers'}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <button
+            onClick={() => setCurrentPage(PageView.OPPORTUNITIES)}
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-slate-900 text-white rounded-full font-semibold hover:bg-emerald-600 transition-all"
+          >
+            View All Opportunities <Icons.ArrowRight size={18} />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+
   const HomeView = () => (
     <div className="animate-fade-in">
       <HeroSection />
+      <FeaturedOpportunities />
       <DivisionsPreview />
       <PillarsSection />
-      
+
       <div className="bg-slate-900 py-16 text-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { label: 'Clinics Optimized', value: '150+' },
-              { label: 'Frameworks Deployed', value: '12' },
-              { label: 'Average Growth', value: '2.5x' },
-              { label: 'Successful Exits', value: '$50M+' },
-            ].map((stat, idx) => (
+            {MARKET_STATS.map((stat, idx) => (
               <div key={idx} className="text-center border-r border-slate-800 last:border-0">
                 <div className="text-3xl md:text-5xl font-bold text-emerald-500 mb-2">{stat.value}</div>
                 <div className="text-sm font-medium text-slate-400 uppercase tracking-wide">{stat.label}</div>
@@ -188,16 +230,16 @@ function App() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
              <div className="space-y-8">
                 <h2 className="text-3xl md:text-4xl font-bold leading-tight text-slate-900">
-                  Stop Guessing.<br/>Start Executing.
+                  Your Practice Is Your Legacy.<br/>Exit It Right.
                 </h2>
                 <p className="text-lg text-slate-600">
-                  Most clinic owners struggle because they lack a system. We provide the operating system for your entire business journey, from the first patient to the final sale.
+                  We're not brokers — we're practice owners and operators who have lived every stage of this business. We connect you with the right buyer, the right accountant, and the right lawyer, then guide the deal home.
                 </p>
                 <div className="space-y-6">
                   {[
-                    "Trademarked methodologies proven in the Canadian market.",
-                    "Focus on both profitability and life balance.",
-                    "End-to-end support for every stage of business maturity."
+                    "Confidential from the first call — your staff and patients hear nothing until you decide.",
+                    "Coast-to-coast: chiropody and podiatry practices across every province.",
+                    "Support beyond the sale: we set the new owner up to protect your legacy."
                   ].map((item, i) => (
                     <div key={i} className="flex gap-4 items-start">
                       <div className="mt-1 bg-emerald-100 text-emerald-600 rounded-full p-1 shrink-0">
@@ -259,7 +301,8 @@ function App() {
           <div className="container mx-auto px-4 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Trademarked Frameworks</h1>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              We guide you through 3 distinct phases. Choose the stage that matches your current practice needs.
+              Three teams covering the full arc of a practice transition: the seller's exit,
+              the buyer's launch, and the new owner's path to profitability.
             </p>
           </div>
        </div>
@@ -311,9 +354,9 @@ function App() {
                          </div>
                          <h3 className="text-3xl font-bold text-slate-900 mb-4">{division.title} Phase</h3>
                          <p className="text-slate-500 max-w-sm mx-auto">
-                            {division.id === 'building' && "Focus on foundation, patient acquisition, and initial team setup."}
-                            {division.id === 'renovating' && "Focus on systems, efficiency, and financial optimization."}
-                            {division.id === 'selling' && "Focus on valuation, exit strategy, and succession planning."}
+                            {division.id === 'building' && "For buyers and new owners: licensing, team setup, and patient acquisition to bring your acquired clinic online."}
+                            {division.id === 'renovating' && "For new owners and operating partners: the Four Pillars — scheduling, marketing, money management, staffing."}
+                            {division.id === 'selling' && "For sellers: valuation, exit strategy, buyer matching, and succession planning."}
                          </p>
                          {division.id === 'selling' && (
                            <div className="absolute top-8 right-8 rotate-12 bg-red-600 text-white px-6 py-2 font-bold text-xl rounded-lg border-2 border-white shadow-xl">
@@ -353,6 +396,9 @@ function App() {
         {currentPage === PageView.SERVICES && <ServicesView />}
         {currentPage === PageView.ABOUT && <AboutView onNavigate={setCurrentPage} />}
         {currentPage === PageView.CONTACT && <ContactView />}
+        {currentPage === PageView.OPPORTUNITIES && <OpportunitiesView onNavigate={setCurrentPage} />}
+        {currentPage === PageView.BUYERS && <BuyersView onNavigate={setCurrentPage} />}
+        {currentPage === PageView.HOW_IT_WORKS && <HowItWorksView onNavigate={setCurrentPage} />}
       </main>
 
       <Footer onNavigate={setCurrentPage} />

@@ -1,22 +1,49 @@
 
-import { ServiceItem, Testimonial, Division, TeamMember, Pillar, HeroContent } from './types';
+import { ServiceItem, Testimonial, Division, TeamMember, Pillar, HeroContent, OpportunityProfile } from './types';
 
 export const HERO_CONTENT: HeroContent = {
-  title: "Enhance Your Practice,",
-  highlight: "Enrich Your Life!",
-  description: "We provide the blueprint for every stage of your clinic's lifecycle for startup, growth, or exit focused on both profitability and your personal freedom.",
+  title: "Ready to Sell Your",
+  highlight: "Foot Care Practice?",
+  description: "We help Canadian chiropodists and podiatrists exit on their terms — confidentially connecting sellers with qualified buyers, and guiding both sides through the transition with the right professional team.",
   backgroundImage: "/images/hero-bg.jpg", // Local clinic hallway photo
-  buttonPrimary: "Explore Our Frameworks",
-  buttonSecondary: "Book a Strategy Call"
+  buttonPrimary: "Start a Confidential Conversation",
+  buttonSecondary: "I'm Looking to Acquire"
 };
 
+// Flywheel order: every transaction starts with a sale, then the buyer
+// brings the clinic online (Build) and optimizes it (Renovate).
 export const DIVISIONS: Division[] = [
   {
-    id: 'building',
-    title: 'BUILDING',
+    id: 'selling',
+    title: 'SELL',
     step: '1',
+    iconName: 'Key',
+    summary: 'Exit your practice confidentially, on your terms.',
+    services: [
+      {
+        title: 'The Exit-Ready Schedule Framework™',
+        description: 'The crucial role of scheduling in readying your practice for transition.'
+      },
+      {
+        title: 'Strategic Planning for Exiting Your Business™',
+        description: 'Crafting a strategy that sells your practice by making your business more attractive to potential buyers.'
+      },
+      {
+        title: 'The Practice Valuation Plan™',
+        description: 'Recognize the red flags and green lights in preparing your business financials for buyer scrutiny for a solid valuation plan.'
+      },
+      {
+        title: 'The Transition Ready Team System™',
+        description: 'Ensuring team stability in the sale of your practice for a smooth handoff.'
+      }
+    ]
+  },
+  {
+    id: 'building',
+    title: 'BUILD',
+    step: '2',
     iconName: 'Home',
-    summary: 'Establish a rock-solid foundation for your new practice.',
+    summary: 'Bring your newly acquired clinic online — even if foot care is new to you.',
     services: [
       {
         title: 'The Foundational Schedule Builder™',
@@ -38,10 +65,10 @@ export const DIVISIONS: Division[] = [
   },
   {
     id: 'renovating',
-    title: 'RENOVATING',
-    step: '2',
+    title: 'RENOVATE',
+    step: '3',
     iconName: 'Hammer',
-    summary: 'Fix the flow and modernize an existing practice.',
+    summary: 'Profitability coaching for new owners and operating partners.',
     services: [
       {
         title: 'The Schedule Renovation Blueprint™',
@@ -60,32 +87,72 @@ export const DIVISIONS: Division[] = [
         description: 'Align your current staff, improve communication, and reduce friction.'
       }
     ]
+  }
+];
+
+// ⚠️ PLACEHOLDER DATA — fictitious profiles for layout/dev only.
+// Replace with real seller-approved profiles before launch.
+// Each seller chooses their own visibility (public teaser vs gated).
+export const OPPORTUNITIES: OpportunityProfile[] = [
+  {
+    id: 'ON-2401',
+    region: 'Southwestern Ontario',
+    province: 'ON',
+    visibility: 'public',
+    status: 'available',
+    revenueBand: '$450K – $550K',
+    rooms: 3,
+    staff: 4,
+    premises: 'Leased — 6 years remaining, renewal option',
+    transitionPreference: 'Owner retiring; available for a 3-month handover',
+    highlight: 'Established chiropody clinic with 25+ years of patient goodwill and consistent referral base.'
   },
   {
-    id: 'selling',
-    title: 'SELLING',
-    step: '3',
-    iconName: 'Key',
-    summary: 'Prepare your practice for a lucrative exit and smooth transition.',
-    services: [
-      {
-        title: 'The Exit-Ready Schedule Framework™',
-        description: 'The crucial role of scheduling in readying your practice for transition.'
-      },
-      {
-        title: 'Strategic Planning for Exiting Your Business™',
-        description: 'Crafting a strategy that sells your practice by making your business more attractive to potential buyers.'
-      },
-      {
-        title: 'The Practice Valuation Plan™',
-        description: 'Recognize the red flags and green lights in preparing your business financials for buyer scrutiny for a solid valuation plan.'
-      },
-      {
-        title: 'The Transition Ready Team System™',
-        description: 'Ensuring team stability in the sale of your practice for a smooth handoff.'
-      }
-    ]
+    id: 'ON-2402',
+    region: 'Greater Toronto Area',
+    province: 'ON',
+    visibility: 'gated',
+    status: 'available',
+    revenueBand: '$900K – $1.1M',
+    rooms: 5,
+    staff: 8,
+    premises: 'Confidential',
+    transitionPreference: 'Confidential',
+    highlight: 'Multi-provider practice in a high-density market. Details shared with qualified buyers only.'
+  },
+  {
+    id: 'BC-2403',
+    region: 'Lower Mainland, BC',
+    province: 'BC',
+    visibility: 'public',
+    status: 'available',
+    revenueBand: '$650K – $750K',
+    rooms: 4,
+    staff: 5,
+    premises: 'Owner-occupied building — available for purchase with practice',
+    transitionPreference: 'Flexible; owner open to associate role post-sale',
+    highlight: 'Podiatry practice with orthotics lab on site and real estate opportunity.'
+  },
+  {
+    id: 'AB-2404',
+    region: 'Calgary Region',
+    province: 'AB',
+    visibility: 'gated',
+    status: 'under-discussion',
+    revenueBand: 'Confidential',
+    rooms: 0,
+    staff: 0,
+    premises: 'Confidential',
+    transitionPreference: 'Confidential',
+    highlight: 'Profitable multi-disciplinary foot care practice. Currently in discussion with a qualified party.'
   }
+];
+
+export const MARKET_STATS = [
+  { label: 'Practices in Ontario', value: '850+' },
+  { label: 'Ontario Clinic Capacity', value: '3,000' },
+  { label: 'Foot Care Schools in Canada', value: '2' },
+  { label: 'Provinces We Serve', value: '10' }
 ];
 
 export const PILLARS: Pillar[] = [
@@ -194,33 +261,37 @@ export const TEAM_MEMBERS: TeamMember[] = [
   }
 ];
 
+// ⚠️ PLACEHOLDER DATA — fictitious testimonials for layout/dev only.
+// Replace with real transition stories before launch.
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 't1',
     name: 'Dr. Sarah Jenkins',
-    role: 'Lead Podiatrist',
-    clinic: 'Toronto Foot Care Centre',
-    content: 'The Foundational Schedule Builder completely changed my work-life balance. I’m seeing more patients in less time.'
+    role: 'Retired Chiropodist',
+    clinic: 'Southwestern Ontario',
+    content: 'After 28 years, I didn’t know where to start. FHN coordinated my accountant and lawyer, found a serious buyer, and my staff never heard a whisper until the day I chose to tell them.'
   },
   {
     id: 't2',
     name: 'Michael Chen',
-    role: 'Clinic Manager',
-    clinic: 'Vancouver Orthotics',
-    content: 'We used the Renovating track to overhaul our financial systems. We doubled our revenue in 18 months.'
+    role: 'Operating Partner',
+    clinic: 'Private Investment Group',
+    content: 'We acquired two clinics through FHN’s network. Their Build team brought our first clinic online and the Four Pillars coaching took margins up within the first year.'
   },
   {
     id: 't3',
     name: 'Elena Rodriguez',
-    role: 'Chiropodist',
-    clinic: 'Montreal Step Right',
-    content: 'The Exit-Ready Framework gave me the roadmap I needed to sell my practice for what it was truly worth.'
+    role: 'Podiatrist & Seller',
+    clinic: 'Lower Mainland, BC',
+    content: 'The valuation prep meant no surprises during due diligence. The sale closed on schedule and I stayed on as an associate — exactly the transition I wanted.'
   }
 ];
 
 export const NAV_LINKS = [
   { label: 'Home', value: 'home' },
-  { label: 'Services', value: 'services' },
+  { label: 'Opportunities', value: 'opportunities' },
+  { label: 'For Buyers', value: 'buyers' },
+  { label: 'How It Works', value: 'how-it-works' },
   { label: 'About Us', value: 'about' },
   { label: 'Contact', value: 'contact' }
 ];

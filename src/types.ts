@@ -67,5 +67,24 @@ export enum PageView {
   HOME = 'home',
   ABOUT = 'about',
   SERVICES = 'services',
-  CONTACT = 'contact'
+  CONTACT = 'contact',
+  OPPORTUNITIES = 'opportunities',
+  BUYERS = 'buyers',
+  HOW_IT_WORKS = 'how-it-works'
+}
+
+export interface OpportunityProfile {
+  id: string;
+  region: string;
+  province: string;
+  // 'public' shows the blind profile openly; 'gated' shows only a confidential teaser.
+  // Visibility is chosen case-by-case by each seller.
+  visibility: 'public' | 'gated';
+  status: 'available' | 'under-discussion' | 'closed';
+  revenueBand: string;
+  rooms: number;
+  staff: number;
+  premises: string;
+  transitionPreference: string;
+  highlight: string;
 }
