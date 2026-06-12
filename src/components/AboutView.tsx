@@ -127,28 +127,28 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
           })}
         </div>
         
+        {/* Sell Division */}
+        <TeamSection
+          title="The Sell Division"
+          description="Guiding practice owners through confidential exits — valuation preparation, buyer matching, and transition planning."
+          members={sellTeam}
+          icon={Icons.Key}
+        />
+
         {/* Build Division */}
-        <TeamSection 
-          title="The Build Division" 
-          description="Laying the foundation for new clinic success through structured launches and ideal scheduling."
-          members={buildTeam} 
+        <TeamSection
+          title="The Build Division"
+          description="Bringing newly acquired clinics online under new ownership — even for buyers new to foot care."
+          members={buildTeam}
           icon={Icons.Home}
         />
 
         {/* Renovate Division */}
-        <TeamSection 
-          title="The Renovate Division" 
-          description="Optimizing established practices to increase profitability while restoring work-life balance."
-          members={renovateTeam} 
+        <TeamSection
+          title="The Renovate Division"
+          description="Coaching new owners and operating partners to peak profitability through the Four Pillars."
+          members={renovateTeam}
           icon={Icons.Hammer}
-        />
-
-        {/* Sell Division */}
-        <TeamSection 
-          title="The Sell Division" 
-          description="Maximizing practice valuation and ensuring seamless career transitions for clinic owners."
-          members={sellTeam} 
-          icon={Icons.Key}
         />
 
         {/* Final Mission Statement */}
