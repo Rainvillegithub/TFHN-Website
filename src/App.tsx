@@ -228,8 +228,8 @@ function App() {
              <div className="relative">
                 <div className="absolute -inset-4 bg-emerald-500 rounded-3xl -rotate-2 opacity-10"></div>
                 <img 
-                  src="/images/chrysalis-prototype.png" 
-                  alt="Chrysalis Practice Partners Prototype Screenshot" 
+                  src="/images/pat-with-clients.png" 
+                  alt="Patrick Rainville with clinic clients" 
                   className="relative rounded-2xl shadow-2xl w-full border border-slate-200 hover:scale-[1.02] transition-all duration-500"
                 />
              </div>
