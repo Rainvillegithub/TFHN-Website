@@ -4,7 +4,7 @@ import { ServiceItem, Testimonial, Division, TeamMember, Pillar, HeroContent, Op
 export const HERO_CONTENT: HeroContent = {
   title: "A Coordinated Team for Your",
   highlight: "Practice Transformation",
-  description: "We help Canadian podiatrists navigate the 3-to-5 year window around a practice sale — confidentially matching sellers with qualified buyers and guiding both sides through a seamless transformation.",
+  description: "We help Canadian healthcare providers in private practice navigate the 3-to-5 year window around a practice sale — confidentially matching sellers with qualified buyers and guiding both sides through a seamless transformation.",
   backgroundImage: "/images/hero-bg.jpg", // Local clinic hallway photo
   buttonPrimary: "I Want to Sell",
   buttonSecondary: "I Want to Acquire"
@@ -43,7 +43,7 @@ export const DIVISIONS: Division[] = [
     title: 'BUILD',
     step: '2',
     iconName: 'Home',
-    summary: 'Bring your newly acquired clinic online — even if foot care is new to you.',
+    summary: 'Bring your newly acquired clinic online — even if clinic ownership is new to you.',
     services: [
       {
         title: 'The Foundational Schedule Builder™',
@@ -105,7 +105,7 @@ export const OPPORTUNITIES: OpportunityProfile[] = [
     staff: 4,
     premises: 'Leased — 6 years remaining, renewal option',
     successionPreference: 'Owner retiring; available for a 3-month handover',
-    highlight: 'Established podiatry practice with 25+ years of patient goodwill and consistent referral base.'
+    highlight: 'Established foot care practice with 25+ years of patient goodwill and consistent referral base.'
   },
   {
     id: 'ON-2402',
@@ -118,7 +118,7 @@ export const OPPORTUNITIES: OpportunityProfile[] = [
     staff: 8,
     premises: 'Confidential',
     successionPreference: 'Confidential',
-    highlight: 'Multi-provider practice in a high-density market. Details shared with qualified buyers only.'
+    highlight: 'Multi-provider physiotherapy and rehabilitation clinic in a high-density market. Details shared with qualified buyers only.'
   },
   {
     id: 'BC-2403',
@@ -131,7 +131,7 @@ export const OPPORTUNITIES: OpportunityProfile[] = [
     staff: 5,
     premises: 'Owner-occupied building — available for purchase with practice',
     successionPreference: 'Flexible; owner open to associate role post-sale',
-    highlight: 'Podiatry practice with orthotics lab on site and real estate opportunity.'
+    highlight: 'Dental practice with an on-site lab and a real estate opportunity.'
   },
   {
     id: 'AB-2404',
@@ -144,7 +144,7 @@ export const OPPORTUNITIES: OpportunityProfile[] = [
     staff: 0,
     premises: 'Confidential',
     successionPreference: 'Confidential',
-    highlight: 'Profitable multi-disciplinary foot care practice. Currently in discussion with a qualified party.'
+    highlight: 'Profitable multi-disciplinary allied health practice. Currently in discussion with a qualified party.'
   }
 ];
 
@@ -193,10 +193,11 @@ export const TRANSFORMATION_STAGES: TransformationStage[] = [
   }
 ];
 
+// ⚠️ Verify the CFIB succession figures before launch (CFIB 2023 succession report).
 export const MARKET_STATS = [
-  { label: 'Practices in Ontario', value: '850+' },
-  { label: 'Ontario Clinic Capacity', value: '3,000' },
-  { label: 'Foot Care Schools in Canada', value: '2' },
+  { label: 'Business Training in Most Clinical Programs', value: '~0 hrs' },
+  { label: 'Canadian Owners Planning to Exit Within 10 Years', value: '76%' },
+  { label: 'Business Assets Changing Hands This Decade', value: '$2T+' },
   { label: 'Provinces We Serve', value: '10' }
 ];
 
@@ -259,49 +260,49 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 'patrick-rainville',
     name: 'Patrick Rainville',
-    role: 'Co-founder, Transformation Marketing',
-    credibility: 'Market positioning & digital outreach',
-    bio: 'Directs firm-wide practice transformation marketing, leveraging data-driven campaigns to connect clinics with qualified podiatrists and strategic buyers.',
+    role: 'Co-founder, Build Team',
+    credibility: 'Marketing & buyer outreach',
+    bio: 'On the Build team, Patrick drives the marketing that brings the practice to life for its new owner — connecting clinics with qualified clinicians and strategic buyers so Peter and Kathy can close the sale.',
     image: '/images/patrick.png'
   },
   {
     id: 'tina-rainville',
     name: 'Tina Rainville',
-    role: 'Co-founder, Transformation Financials',
-    credibility: 'Financial operations & valuations',
-    bio: 'Leads operations and financial structuring for practice transformations, aligning tax considerations and preparing clean, audit-ready numbers.',
+    role: 'Co-founder, Build Team',
+    credibility: 'Financial operations & clean numbers',
+    bio: 'On the Build team, Tina leads financial structuring for the transformation — aligning tax considerations and preparing clean, audit-ready numbers a buyer can trust.',
     image: '/images/tina.png'
   },
   {
     id: 'dave-simard',
     name: 'Dave Simard',
-    role: 'Co-founder, Operations Optimization',
-    credibility: 'Post-sale efficiency',
-    bio: 'Guides operational scaling and post-sale clinic performance, coaching new owners to achieve peak profitability.',
+    role: 'Co-founder, Renovate Team',
+    credibility: 'Operations & post-sale performance',
+    bio: 'On the Renovate team, Dave reshapes clinic operations through the transformation and coaches new owners after the sale to reach peak profitability.',
     image: '/images/dave.png'
   },
   {
     id: 'jodi-simard',
     name: 'Jodi Simard',
-    role: 'Co-founder, Client Process & Systems',
+    role: 'Co-founder, Renovate Team',
     credibility: 'Systems & client-facing process',
-    bio: 'Focuses on integrating client-facing systems and streamlining operational processes to guarantee smooth, friction-free ownership handovers.',
+    bio: 'On the Renovate team, Jodi rebuilds client-facing systems and operational processes so the handover is friction-free and the practice fits its new owner from day one.',
     image: '/images/jody.png'
   },
   {
     id: 'peter-ferguson',
     name: 'Peter Ferguson',
-    role: 'Co-founder, Practice Transformation Lead',
+    role: 'Co-founder, Succession Lead',
     credibility: 'Succession & valuation',
-    bio: 'Acts as the primary front-facing lead for practice transformations, guiding sellers through valuations, exit strategies, and confidential buyer matching.',
+    bio: 'Peter leads the sale itself — guiding sellers through valuations, exit strategy, and confidential buyer matching, backed by the Build and Renovate teams behind the scenes.',
     image: '/images/peter.png?v=3'
   },
   {
     id: 'kathy-ferguson',
     name: 'Kathy Ferguson',
-    role: 'Co-founder, Assessment & Patient Acceptance',
-    credibility: 'Transformation planning & clinical alignment',
-    bio: 'Leads clinical practice assessments and patient acceptance protocols, ensuring structured, high-retention successions for patient care.',
+    role: 'Co-founder, Succession Lead',
+    credibility: 'Assessment & patient acceptance',
+    bio: 'Alongside Peter, Kathy leads the succession — running practice assessments and patient acceptance protocols so the handoff keeps patients and value intact.',
     image: '/images/kathy.png?v=3'
   }
 ];
@@ -312,7 +313,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: 't1',
     name: 'Dr. Sarah Jenkins',
-    role: 'Retired Podiatrist',
+    role: 'Retired Chiropodist',
     clinic: 'Southwestern Ontario',
     content: 'After 28 years, I didn’t know where to start. They coordinated my accountant and lawyer, found a serious buyer, and my staff never heard a whisper until the day I chose to tell them.'
   },
@@ -326,7 +327,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: 't3',
     name: 'Elena Rodriguez',
-    role: 'Podiatrist & Seller',
+    role: 'Physiotherapist & Seller',
     clinic: 'Lower Mainland, BC',
     content: 'The valuation prep meant no surprises during due diligence. The sale closed on schedule and I stayed on as an associate — exactly the evolution I wanted.'
   }

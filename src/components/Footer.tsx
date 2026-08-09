@@ -19,7 +19,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                <BrandLogo className="h-16" isDark={true} />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Canada's practice transformation advisory for podiatrists — confidentially connecting sellers and buyers, and supporting new owners throughout the 3-to-5 year transformation window.
+              Canada's practice transformation advisory for healthcare providers in private practice — confidentially connecting sellers and buyers, and supporting new owners throughout the 3-to-5 year transformation window.
             </p>
             <div className="flex gap-4">
               {/* Social placeholders */}

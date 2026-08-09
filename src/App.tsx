@@ -147,7 +147,7 @@ function App() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Featured Opportunities</h2>
           <p className="text-lg text-slate-600 leading-relaxed">
-            Confidential, anonymized profiles of Canadian foot care practices in transformation.
+            Confidential, anonymized profiles of Canadian private healthcare practices in transformation.
           </p>
         </div>
 
@@ -215,7 +215,7 @@ function App() {
                 <div className="space-y-6">
                   {[
                     "Confidential from the first call — your staff and patients hear nothing until you decide.",
-                    "Coast-to-coast: podiatry practices across every province.",
+                    "Coast-to-coast: private healthcare practices across every province.",
                     "Support beyond the sale: we set the new owner up to protect your legacy."
                   ].map((item, i) => (
                     <div key={i} className="flex gap-4 items-start">

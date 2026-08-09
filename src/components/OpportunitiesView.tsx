@@ -24,7 +24,7 @@ export const OpportunitiesView: React.FC<OpportunitiesViewProps> = ({ onNavigate
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Practice Opportunities</h1>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-            Confidential profiles of Canadian foot care practices in transformation.
+            Confidential profiles of Canadian private healthcare practices in transformation.
             Every profile is anonymized to protect the seller, their staff, and their patients.
           </p>
         </div>

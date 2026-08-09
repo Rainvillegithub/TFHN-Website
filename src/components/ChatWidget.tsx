@@ -11,7 +11,7 @@ export const ChatWidget: React.FC = () => {
     {
       id: 'welcome',
       role: 'model',
-      text: 'Hello! I am the FHN Virtual Consultant. How can I help optimize your practice today?',
+      text: 'Hello! I am the Chrysalis Virtual Consultant. How can I help optimize your practice today?',
       timestamp: new Date()
     }
   ]);
@@ -73,7 +73,7 @@ export const ChatWidget: React.FC = () => {
                 <BrandLogo className="h-6 w-auto" isDark={true} showText={false} />
               </div>
               <div>
-                <h3 className="font-semibold text-sm">FHN Assistant</h3>
+                <h3 className="font-semibold text-sm">Chrysalis Assistant</h3>
                 <p className="text-xs text-slate-300">Powered by Gemini AI</p>
               </div>
             </div>

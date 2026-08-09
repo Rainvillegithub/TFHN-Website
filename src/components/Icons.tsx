@@ -30,7 +30,8 @@ import {
   BarChart3,
   LayoutGrid,
   Lock,
-  MessageCircle
+  MessageCircle,
+  Award
 } from 'lucide-react';
 
 export const Icons = {
@@ -65,5 +66,6 @@ export const Icons = {
   BarChart3,
   LayoutGrid,
   Lock,
-  MessageCircle
+  MessageCircle,
+  Award
 };

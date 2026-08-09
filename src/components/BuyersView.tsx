@@ -11,13 +11,13 @@ export const BuyersView: React.FC<BuyersViewProps> = ({ onNavigate }) => {
   const thesisPoints = [
     {
       icon: 'GraduationCap',
-      title: 'A locked supply of providers',
-      text: 'Canada has only two foot care schools: the Michener Institute in Toronto (English) and UQTR in Trois-Rivières (French). Current legislation provides no pathway for internationally trained podiatrists — new supply is structurally capped.'
+      title: 'A constrained supply of providers',
+      text: 'Across Canadian healthcare disciplines, provider supply is capped by limited training seats and licensing barriers. Foot care is the starkest example: only two schools in the country — the Michener Institute in Toronto and UQTR in Trois-Rivières — and no licensing pathway for internationally trained podiatrists.'
     },
     {
       icon: 'TrendingUp',
       title: 'Demand far exceeds capacity',
-      text: 'Ontario alone has roughly 850–900 practices against an estimated capacity for 3,000. An aging population keeps demand for foot care growing while the provider base shrinks.'
+      text: 'An aging population keeps demand for private healthcare growing while the provider base shrinks. In foot care alone, Ontario has roughly 850–900 practices against an estimated capacity for 3,000.'
     },
     {
       icon: 'Users',
@@ -27,7 +27,7 @@ export const BuyersView: React.FC<BuyersViewProps> = ({ onNavigate }) => {
     {
       icon: 'ShieldCheck',
       title: 'Recurring healthcare revenue',
-      text: 'Foot care is need-based and repeat-visit by nature — diabetic care, orthotics, and routine treatment create predictable revenue streams that are resilient through economic cycles.'
+      text: 'Private healthcare is need-based and repeat-visit by nature — whether diabetic foot care, dental hygiene, physiotherapy, or vision care, ongoing treatment creates predictable revenue streams that are resilient through economic cycles.'
     }
   ];
 
@@ -40,7 +40,7 @@ export const BuyersView: React.FC<BuyersViewProps> = ({ onNavigate }) => {
     <div className="pt-24 pb-20 animate-fade-in bg-white min-h-screen">
       <div className="bg-black text-white py-20 mb-16">
         <div className="container mx-auto px-4 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Why Canadian Foot Care?</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Why Canadian Private Healthcare?</h1>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto">
             A supply-constrained, recurring-revenue healthcare market —
             and a partner who can take you from acquisition to profitable operation.
