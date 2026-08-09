@@ -11,7 +11,7 @@ export interface SubService {
   description: string;
 }
 
-export interface TransitionStage {
+export interface TransformationStage {
   id: string;
   title: string;
   subtitle: string;
@@ -95,6 +95,6 @@ export interface OpportunityProfile {
   rooms: number;
   staff: number;
   premises: string;
-  transitionPreference: string;
+  successionPreference: string;
   highlight: string;
 }

@@ -78,7 +78,7 @@ export const BuyersView: React.FC<BuyersViewProps> = ({ onNavigate }) => {
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">You don't need a clinical background</h2>
             <p className="text-slate-300">
               Many of our buyers come from outside the industry — private equity groups, healthcare investors,
-              and entrepreneurs. Our transition team stays with you after the purchase.
+              and entrepreneurs. Our transformation team stays with you after the purchase.
             </p>
             </div>
             <div className="grid md:grid-cols-2 gap-8">
@@ -90,7 +90,7 @@ export const BuyersView: React.FC<BuyersViewProps> = ({ onNavigate }) => {
               </p>
             </div>
             <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
-              <h3 className="text-2xl font-bold text-slate-900 mb-3">Transition Coaching</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">Transformation Coaching</h3>
               <p className="text-slate-600 leading-relaxed">
                 Hands-on coaching for your operators across our internal four pillars of clinic performance:
                 scheduling, marketing, money management, and staffing.

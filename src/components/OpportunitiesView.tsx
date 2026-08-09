@@ -12,7 +12,7 @@ const StatusBadge: React.FC<{ status: OpportunityProfile['status'] }> = ({ statu
     return <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800">In Discussion</span>;
   }
   if (status === 'closed') {
-    return <span className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-200 text-slate-600">Transitioned</span>;
+    return <span className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-200 text-slate-600">Succession Complete</span>;
   }
   return <span className="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">Available</span>;
 };
@@ -24,7 +24,7 @@ export const OpportunitiesView: React.FC<OpportunitiesViewProps> = ({ onNavigate
         <div className="container mx-auto px-4 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Practice Opportunities</h1>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-            Confidential profiles of Canadian foot care practices in transition.
+            Confidential profiles of Canadian foot care practices in transformation.
             Every profile is anonymized to protect the seller, their staff, and their patients.
           </p>
         </div>
@@ -69,8 +69,8 @@ export const OpportunitiesView: React.FC<OpportunitiesViewProps> = ({ onNavigate
                     <div className="font-semibold text-slate-900">{opp.premises}</div>
                   </div>
                   <div className="bg-slate-50 rounded-xl p-3 col-span-2">
-                    <div className="text-xs text-slate-400 uppercase tracking-wide mb-1">Transition</div>
-                    <div className="font-semibold text-slate-900">{opp.transitionPreference}</div>
+                    <div className="text-xs text-slate-400 uppercase tracking-wide mb-1">Succession</div>
+                    <div className="font-semibold text-slate-900">{opp.successionPreference}</div>
                   </div>
                 </div>
               ) : (
@@ -110,7 +110,7 @@ export const OpportunitiesView: React.FC<OpportunitiesViewProps> = ({ onNavigate
 
         {/* Advisory disclaimer */}
         <p className="max-w-3xl mx-auto mt-12 text-center text-sm text-slate-400 leading-relaxed">
-          The Foot Health Network is a practice transition advisory firm, not a licensed real estate or business brokerage.
+          Chrysalis Practice Partners is an operating brand of The Foot Health Network, a practice transformation advisory firm, not a licensed real estate or business brokerage.
           We connect sellers and buyers, coordinate the accountants and lawyers who formalize each transaction,
           and support both parties through negotiation.
         </p>

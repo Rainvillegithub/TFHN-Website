@@ -57,11 +57,11 @@ export const HowItWorksView: React.FC<HowItWorksViewProps> = ({ onNavigate }) =>
         <div className="max-w-3xl mx-auto mb-16 bg-white rounded-3xl p-8 border-l-4 border-emerald-600 shadow-sm">
           <h2 className="text-xl font-bold text-slate-900 mb-3">Straight talk: we are not brokers</h2>
           <p className="text-slate-600 leading-relaxed">
-            Chrysalis Practice Partners is an operating brand of The Foot Health Network, a practice transition advisory and consulting firm.
+            Chrysalis Practice Partners is an operating brand of The Foot Health Network, a practice transformation advisory and consulting firm.
             We are not a licensed real estate or business brokerage.
             We don't list properties or execute transactions. What we do is connect the people:
             the seller, the buyer, the accountant, and the lawyer — and guide everyone through
-            negotiation to a successful transition. The licensed professionals handle the paperwork;
+            negotiation to a successful succession. The licensed professionals handle the paperwork;
             we make sure the deal actually comes together.
           </p>
         </div>
@@ -85,7 +85,7 @@ export const HowItWorksView: React.FC<HowItWorksViewProps> = ({ onNavigate }) =>
         <div className="max-w-3xl mx-auto mb-20 text-center">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">And after the sale?</h2>
           <p className="text-lg text-slate-600 mb-8">
-            Every transition creates a new owner. Our team supports them through the integration and profitability coaching stages, using our trademarked Foundational Schedule and Four Pillars methods — so sellers leave a thriving legacy and buyers get a running start.
+            Every succession creates a new owner. Our team supports them through the integration and profitability coaching stages, using our trademarked Foundational Schedule and Four Pillars methods — so sellers leave a thriving legacy and buyers get a running start.
           </p>
           <button
             onClick={() => onNavigate(PageView.SERVICES)}

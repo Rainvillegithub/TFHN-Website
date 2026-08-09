@@ -10,7 +10,7 @@ import { OpportunitiesView } from './components/OpportunitiesView';
 import { BuyersView } from './components/BuyersView';
 import { HowItWorksView } from './components/HowItWorksView';
 import { PageView } from './types';
-import { DIVISIONS, TESTIMONIALS, PILLARS, HERO_CONTENT, OPPORTUNITIES, MARKET_STATS, TRANSITION_STAGES } from './constants';
+import { DIVISIONS, TESTIMONIALS, PILLARS, HERO_CONTENT, OPPORTUNITIES, MARKET_STATS, TRANSFORMATION_STAGES } from './constants';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<PageView>(PageView.HOME);
@@ -45,7 +45,7 @@ function App() {
 
           <div className="flex items-center gap-2 text-emerald-500/90 font-medium text-sm md:text-base animate-fade-in">
             <Icons.ShieldCheck size={18} />
-            <span>Confidential practice transitions, coast to coast</span>
+            <span>Confidential practice successions, coast to coast</span>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -71,12 +71,12 @@ function App() {
     </div>
   );
 
-  const TransitionLifecycle = () => (
+  const TransformationLifecycle = () => (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="inline-block px-4 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-sm font-bold tracking-wider uppercase mb-6">
-            The Transition Window
+            The Transformation Window
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
             Guiding You Through Every Phase
@@ -88,7 +88,7 @@ function App() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 relative max-w-6xl mx-auto">
-          {TRANSITION_STAGES.map((stage) => (
+          {TRANSFORMATION_STAGES.map((stage) => (
             <div key={stage.id} className="relative group">
               <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 h-full flex flex-col">
                 <div className="flex justify-between items-start mb-6">
@@ -122,7 +122,7 @@ function App() {
             onClick={() => setCurrentPage(PageView.SERVICES)}
             className="px-8 py-3.5 bg-slate-900 text-white rounded-full font-semibold hover:bg-emerald-600 transition-all shadow-lg flex items-center justify-center gap-2 mx-auto group"
           >
-            <span>Learn How We Support Your Transition</span>
+            <span>Learn How We Support Your Transformation</span>
             <Icons.ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
@@ -136,7 +136,7 @@ function App() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Featured Opportunities</h2>
           <p className="text-lg text-slate-600 leading-relaxed">
-            Confidential, anonymized profiles of Canadian foot care practices in transition.
+            Confidential, anonymized profiles of Canadian foot care practices in transformation.
           </p>
         </div>
 
@@ -176,7 +176,7 @@ function App() {
     <div className="animate-fade-in">
       <HeroSection />
       <FeaturedOpportunities />
-      <TransitionLifecycle />
+      <TransformationLifecycle />
 
       <div className="bg-slate-900 py-16 text-white">
         <div className="container mx-auto px-4 lg:px-8">
@@ -265,9 +265,9 @@ function App() {
     <div className="pt-24 pb-20 animate-fade-in bg-slate-50">
        <div className="bg-black text-white py-24 mb-16">
           <div className="container mx-auto px-4 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Coordinated Transition Frameworks</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Coordinated Transformation Frameworks</h1>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              While our transition team operates as a single unified unit, we draw on these three trademarked internal frameworks to structure our operational support throughout the transition lifecycle.
+              While our transformation team operates as a single unified unit, we draw on these three trademarked internal frameworks to structure our operational support throughout the practice lifecycle.
             </p>
           </div>
        </div>

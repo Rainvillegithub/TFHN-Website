@@ -13,9 +13,9 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
         <div className="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 mb-4 animate-bounce">
           <Icons.Users size={32} />
         </div>
-        <h3 className="text-3xl font-bold text-slate-900 mb-2">Our Coordinated Transition Team</h3>
+        <h3 className="text-3xl font-bold text-slate-900 mb-2">Our Coordinated Transformation Team</h3>
         <p className="text-slate-600 font-medium text-center max-w-2xl px-4">
-          We operate as a single unified team. Every practice transition receives the backing of our complete expertise, led by a dedicated, front-facing project lead.
+          We operate as a single unified team. Every practice transformation receives the backing of our complete expertise, led by a dedicated, front-facing project lead.
         </p>
         <div className="h-1 w-20 bg-emerald-500 mt-6 rounded-full"></div>
       </div>
@@ -68,7 +68,7 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
           <span className="inline-block px-4 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-sm font-bold tracking-wider uppercase mb-6">Our Story</span>
           <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-8 leading-tight">Expertise Born from <span className="text-emerald-600">Experience.</span></h1>
           <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-medium">
-            We are Canada's dedicated consulting firm for podiatry professionals, providing the operational frameworks needed to transition clinical excellence into lasting business success.
+            We are Canada's dedicated consulting firm for podiatry professionals, providing the operational frameworks needed to transform clinical excellence into lasting business success.
           </p>
         </div>
         

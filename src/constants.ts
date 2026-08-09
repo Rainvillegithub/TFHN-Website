@@ -1,10 +1,10 @@
 
-import { ServiceItem, Testimonial, Division, TeamMember, Pillar, HeroContent, OpportunityProfile, TransitionStage } from './types';
+import { ServiceItem, Testimonial, Division, TeamMember, Pillar, HeroContent, OpportunityProfile, TransformationStage } from './types';
 
 export const HERO_CONTENT: HeroContent = {
   title: "A Coordinated Team for Your",
-  highlight: "Practice Transition",
-  description: "We help Canadian podiatrists navigate the 3-to-5 year window around a practice sale — confidentially matching sellers with qualified buyers and guiding both sides through a seamless transition.",
+  highlight: "Practice Transformation",
+  description: "We help Canadian podiatrists navigate the 3-to-5 year window around a practice sale — confidentially matching sellers with qualified buyers and guiding both sides through a seamless transformation.",
   backgroundImage: "/images/hero-bg.jpg", // Local clinic hallway photo
   buttonPrimary: "I Want to Sell",
   buttonSecondary: "I Want to Acquire"
@@ -22,7 +22,7 @@ export const DIVISIONS: Division[] = [
     services: [
       {
         title: 'The Exit-Ready Schedule Framework™',
-        description: 'The crucial role of scheduling in readying your practice for transition.'
+        description: 'The crucial role of scheduling in readying your practice for succession.'
       },
       {
         title: 'Strategic Planning for Exiting Your Business™',
@@ -33,7 +33,7 @@ export const DIVISIONS: Division[] = [
         description: 'Recognize the red flags and green lights in preparing your business financials for buyer scrutiny for a solid valuation plan.'
       },
       {
-        title: 'The Transition Ready Team System™',
+        title: 'The Succession-Ready Team System™',
         description: 'Ensuring team stability in the sale of your practice for a smooth handoff.'
       }
     ]
@@ -104,7 +104,7 @@ export const OPPORTUNITIES: OpportunityProfile[] = [
     rooms: 3,
     staff: 4,
     premises: 'Leased — 6 years remaining, renewal option',
-    transitionPreference: 'Owner retiring; available for a 3-month handover',
+    successionPreference: 'Owner retiring; available for a 3-month handover',
     highlight: 'Established podiatry practice with 25+ years of patient goodwill and consistent referral base.'
   },
   {
@@ -117,7 +117,7 @@ export const OPPORTUNITIES: OpportunityProfile[] = [
     rooms: 5,
     staff: 8,
     premises: 'Confidential',
-    transitionPreference: 'Confidential',
+    successionPreference: 'Confidential',
     highlight: 'Multi-provider practice in a high-density market. Details shared with qualified buyers only.'
   },
   {
@@ -130,7 +130,7 @@ export const OPPORTUNITIES: OpportunityProfile[] = [
     rooms: 4,
     staff: 5,
     premises: 'Owner-occupied building — available for purchase with practice',
-    transitionPreference: 'Flexible; owner open to associate role post-sale',
+    successionPreference: 'Flexible; owner open to associate role post-sale',
     highlight: 'Podiatry practice with orthotics lab on site and real estate opportunity.'
   },
   {
@@ -143,12 +143,12 @@ export const OPPORTUNITIES: OpportunityProfile[] = [
     rooms: 0,
     staff: 0,
     premises: 'Confidential',
-    transitionPreference: 'Confidential',
+    successionPreference: 'Confidential',
     highlight: 'Profitable multi-disciplinary foot care practice. Currently in discussion with a qualified party.'
   }
 ];
 
-export const TRANSITION_STAGES: TransitionStage[] = [
+export const TRANSFORMATION_STAGES: TransformationStage[] = [
   {
     id: 'preparation',
     title: '3–5 Years Before',
@@ -160,7 +160,7 @@ export const TRANSITION_STAGES: TransitionStage[] = [
       'Valuation audit and operational clean-up',
       'Establishing robust financial reporting',
       'The Exit-Ready Schedule Framework™ integration',
-      'Transition Ready Team System™ alignment'
+      'Succession-Ready Team System™ alignment'
     ]
   },
   {
@@ -259,17 +259,17 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 'patrick-rainville',
     name: 'Patrick Rainville',
-    role: 'Co-founder, Transition Marketing',
+    role: 'Co-founder, Transformation Marketing',
     credibility: 'Market positioning & digital outreach',
-    bio: 'Directs firm-wide transition marketing, leveraging data-driven campaigns to connect clinics with qualified podiatrists and strategic buyers.',
+    bio: 'Directs firm-wide practice transformation marketing, leveraging data-driven campaigns to connect clinics with qualified podiatrists and strategic buyers.',
     image: '/images/patrick.png'
   },
   {
     id: 'tina-rainville',
     name: 'Tina Rainville',
-    role: 'Co-founder, Transition Financials',
+    role: 'Co-founder, Transformation Financials',
     credibility: 'Financial operations & valuations',
-    bio: 'Leads operations and financial structuring for practice transitions, aligning tax considerations and preparing clean, audit-ready numbers.',
+    bio: 'Leads operations and financial structuring for practice transformations, aligning tax considerations and preparing clean, audit-ready numbers.',
     image: '/images/tina.png'
   },
   {
@@ -291,23 +291,23 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 'peter-ferguson',
     name: 'Peter Ferguson',
-    role: 'Co-founder, Practice Transition Lead',
+    role: 'Co-founder, Practice Transformation Lead',
     credibility: 'Succession & valuation',
-    bio: 'Acts as the primary front-facing lead for practice transitions, guiding sellers through valuations, exit strategies, and confidential buyer matching.',
+    bio: 'Acts as the primary front-facing lead for practice transformations, guiding sellers through valuations, exit strategies, and confidential buyer matching.',
     image: '/images/peter.png?v=3'
   },
   {
     id: 'kathy-ferguson',
     name: 'Kathy Ferguson',
     role: 'Co-founder, Assessment & Patient Acceptance',
-    credibility: 'Transition planning & clinical alignment',
-    bio: 'Leads clinical practice assessments and patient acceptance protocols, ensuring structured, high-retention transitions for patient care.',
+    credibility: 'Transformation planning & clinical alignment',
+    bio: 'Leads clinical practice assessments and patient acceptance protocols, ensuring structured, high-retention successions for patient care.',
     image: '/images/kathy.png?v=3'
   }
 ];
 
 // ⚠️ PLACEHOLDER DATA — fictitious testimonials for layout/dev only.
-// Replace with real transition stories before launch.
+// Replace with real succession stories before launch.
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 't1',
@@ -321,14 +321,14 @@ export const TESTIMONIALS: Testimonial[] = [
     name: 'Michael Chen',
     role: 'Operating Partner',
     clinic: 'Private Investment Group',
-    content: 'We acquired two clinics through their transition network. Their team brought our first clinic online under new ownership and their transition coaching took margins up within the first year.'
+    content: 'We acquired two clinics through their practice network. Their team brought our first clinic online under new ownership and their operational coaching took margins up within the first year.'
   },
   {
     id: 't3',
     name: 'Elena Rodriguez',
     role: 'Podiatrist & Seller',
     clinic: 'Lower Mainland, BC',
-    content: 'The valuation prep meant no surprises during due diligence. The sale closed on schedule and I stayed on as an associate — exactly the transition I wanted.'
+    content: 'The valuation prep meant no surprises during due diligence. The sale closed on schedule and I stayed on as an associate — exactly the evolution I wanted.'
   }
 ];
 
