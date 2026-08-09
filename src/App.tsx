@@ -9,6 +9,7 @@ import { ContactView } from './components/ContactView';
 import { OpportunitiesView } from './components/OpportunitiesView';
 import { BuyersView } from './components/BuyersView';
 import { HowItWorksView } from './components/HowItWorksView';
+import { MetamorphosisShowcase } from './components/MetamorphosisShowcase';
 import { PageView } from './types';
 import { DIVISIONS, TESTIMONIALS, PILLARS, HERO_CONTENT, OPPORTUNITIES, MARKET_STATS, TRANSFORMATION_STAGES } from './constants';
 
@@ -72,21 +73,9 @@ function App() {
             </div>
           </div>
 
-          {/* Right Column: Large, Beautiful Chrysalis Logo */}
+          {/* Right Column: Metamorphosis Showcase (Caterpillar -> Pupa/Chrysalis -> Butterfly) */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end animate-fade-in delay-200">
-            <div className="relative group p-6">
-              {/* Soft organic glowing gradient border */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-[32px] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-              
-              <div className="relative bg-slate-950/40 backdrop-blur-xl border border-white/10 rounded-[32px] p-8 md:p-12 shadow-2xl flex items-center justify-center max-w-[420px]">
-                <img 
-                  src="/images/chrysalis-logo-top.png" 
-                  alt="Chrysalis Practice Partners Logo" 
-                  className="w-full h-auto object-contain brightness-0 invert filter drop-shadow-[0_0_20px_rgba(16,185,129,0.3)] animate-pulse"
-                  style={{ animationDuration: '4s' }}
-                />
-              </div>
-            </div>
+            <MetamorphosisShowcase />
           </div>
         </div>
       </div>
