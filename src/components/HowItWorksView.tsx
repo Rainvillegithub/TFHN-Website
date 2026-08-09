@@ -57,7 +57,7 @@ export const HowItWorksView: React.FC<HowItWorksViewProps> = ({ onNavigate }) =>
         <div className="max-w-3xl mx-auto mb-16 bg-white rounded-3xl p-8 border-l-4 border-emerald-600 shadow-sm">
           <h2 className="text-xl font-bold text-slate-900 mb-3">Straight talk: we are not brokers</h2>
           <p className="text-slate-600 leading-relaxed">
-            Chrysalis Practice Partners is an operating brand of The Foot Health Network, a practice transformation advisory and consulting firm.
+            Chrysalis Practice Partners grew out of The Foot Health Network — founded by clinic owners to help their own profession, now serving healthcare providers of every discipline.
             We are not a licensed real estate or business brokerage.
             We don't list properties or execute transactions. What we do is connect the people:
             the seller, the buyer, the accountant, and the lawyer — and guide everyone through

@@ -68,7 +68,9 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
           <span className="inline-block px-4 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-sm font-bold tracking-wider uppercase mb-6">Our Story</span>
           <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-8 leading-tight">Expertise Born from <span className="text-emerald-600">Experience.</span></h1>
           <p className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-medium">
-            We are Canada's dedicated consulting firm for healthcare providers in private practice, providing the operational frameworks needed to transform clinical excellence into lasting business success.
+            We are clinic owners, born from clinical experience. We built and ran our own foot care practices,
+            created The Foot Health Network to help our own profession — and today, as Chrysalis Practice Partners,
+            we bring that same lived expertise to healthcare providers of every discipline in private practice.
           </p>
         </div>
         
@@ -134,10 +136,10 @@ export const AboutView: React.FC<AboutViewProps> = ({ onNavigate }) => {
           <div className="relative z-10">
             <h3 className="text-3xl md:text-4xl font-bold mb-8">Our Mission</h3>
             <p className="text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl mx-auto">
-              Chrysalis Practice Partners was born from a simple observation: <strong>excellent clinical skills don't always translate to excellent business management.</strong>
+              We started as clinic owners helping our own. As The Foot Health Network, we lived a simple observation firsthand: <strong>excellent clinical skills don't always translate to excellent business management.</strong>
             </p>
             <p className="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto mb-10">
-              We saw brilliant practitioners struggling with operational bottlenecks and growth plateaus. Our goal is to bridge that gap using our proprietary frameworks, allowing you to focus on what you do best: patient care and legacy protection.
+              The bottlenecks we solved in our own practices are the same ones every private healthcare owner faces — so as Chrysalis Practice Partners, we now bring those proven frameworks to all disciplines, letting you focus on what you do best: patient care and legacy protection.
             </p>
             {onNavigate && (
               <button 

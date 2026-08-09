@@ -88,7 +88,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         <p className="text-slate-600 text-xs leading-relaxed mb-8 max-w-3xl">
-          Chrysalis Practice Partners is an operating brand of The Foot Health Network, a practice transformation advisory and consulting firm. We are not a licensed
+          Chrysalis Practice Partners grew out of The Foot Health Network — founded by clinic owners to help their own profession, now serving healthcare providers of every discipline. We are not a licensed
           real estate or business brokerage. Transactions are formalized by each party's licensed accounting
           and legal professionals.
         </p>
