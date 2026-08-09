@@ -1,10 +1,10 @@
 
-import { ServiceItem, Testimonial, Division, TeamMember, Pillar, HeroContent, OpportunityProfile } from './types';
+import { ServiceItem, Testimonial, Division, TeamMember, Pillar, HeroContent, OpportunityProfile, TransitionStage } from './types';
 
 export const HERO_CONTENT: HeroContent = {
-  title: "Ready to Sell Your",
-  highlight: "Foot Care Practice?",
-  description: "We help Canadian chiropodists and podiatrists exit on their terms — confidentially connecting sellers with qualified buyers, and guiding both sides through the transition with the right professional team.",
+  title: "A Coordinated Team for Your",
+  highlight: "Practice Transition",
+  description: "We help Canadian podiatrists navigate the 3-to-5 year window around a practice sale — confidentially matching sellers with qualified buyers and guiding both sides through a seamless transition.",
   backgroundImage: "/images/hero-bg.jpg", // Local clinic hallway photo
   buttonPrimary: "I Want to Sell",
   buttonSecondary: "I Want to Acquire"
@@ -105,7 +105,7 @@ export const OPPORTUNITIES: OpportunityProfile[] = [
     staff: 4,
     premises: 'Leased — 6 years remaining, renewal option',
     transitionPreference: 'Owner retiring; available for a 3-month handover',
-    highlight: 'Established chiropody clinic with 25+ years of patient goodwill and consistent referral base.'
+    highlight: 'Established podiatry practice with 25+ years of patient goodwill and consistent referral base.'
   },
   {
     id: 'ON-2402',
@@ -145,6 +145,51 @@ export const OPPORTUNITIES: OpportunityProfile[] = [
     premises: 'Confidential',
     transitionPreference: 'Confidential',
     highlight: 'Profitable multi-disciplinary foot care practice. Currently in discussion with a qualified party.'
+  }
+];
+
+export const TRANSITION_STAGES: TransitionStage[] = [
+  {
+    id: 'preparation',
+    title: '3–5 Years Before',
+    subtitle: 'Preparation & Valuation Prep',
+    step: '1',
+    iconName: 'TrendingUp',
+    summary: 'Focus on structuring financials and preparing your practice for a clean, high-value transfer.',
+    points: [
+      'Valuation audit and operational clean-up',
+      'Establishing robust financial reporting',
+      'The Exit-Ready Schedule Framework™ integration',
+      'Transition Ready Team System™ alignment'
+    ]
+  },
+  {
+    id: 'handoff',
+    title: 'The Sale Window',
+    subtitle: 'Confidential Handoff & Matching',
+    step: '2',
+    iconName: 'Key',
+    summary: 'Confidential matchmaking and seamless transaction coordination without alerting staff or patients.',
+    points: [
+      'Gated buyer matchmaking with vetted capital',
+      'Structuring vendor take-backs and payouts',
+      'Confidential clinical assessments',
+      'Comprehensive information package preparation'
+    ]
+  },
+  {
+    id: 'optimization',
+    title: '3–5 Years After',
+    subtitle: 'Integration & Profitability Coaching',
+    step: '3',
+    iconName: 'Award',
+    summary: 'Ensuring the new owner is fully supported to protect your legacy and scale practice margins.',
+    points: [
+      'The Foundational Schedule Builder™ training',
+      'The New Clinic Patient Magnet™ strategy',
+      'The Four Pillars of practice optimization coaching',
+      'Staff integration and communication alignment'
+    ]
   }
 ];
 
@@ -214,49 +259,49 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 'patrick-rainville',
     name: 'Patrick Rainville',
-    role: 'Co-founder, Build Lead',
-    credibility: 'Startup & scale, 30 years experience',
-    bio: 'Coordinates firm-wide strategy with 30 years of experience helping clinic owners navigate startup and scaling phases.',
+    role: 'Co-founder, Transition Marketing',
+    credibility: 'Market positioning & digital outreach',
+    bio: 'Directs firm-wide transition marketing, leveraging data-driven campaigns to connect clinics with qualified podiatrists and strategic buyers.',
     image: '/images/patrick.png'
   },
   {
     id: 'tina-rainville',
     name: 'Tina Rainville',
-    role: 'Co-founder, Build Operations',
-    credibility: 'Operations & Finance (CFO of RCPC)',
-    bio: 'Leads operations and finance for the Build division, ensuring foundational stability and effective clinic launches.',
+    role: 'Co-founder, Transition Financials',
+    credibility: 'Financial operations & valuations',
+    bio: 'Leads operations and financial structuring for practice transitions, aligning tax considerations and preparing clean, audit-ready numbers.',
     image: '/images/tina.png'
   },
   {
     id: 'dave-simard',
     name: 'Dave Simard',
-    role: 'Co-founder, Renovate Lead',
-    credibility: 'Operations streamlining',
-    bio: 'Expert in streamlining operations and strategic planning, guiding established clinics through critical growth transitions.',
+    role: 'Co-founder, Operations Optimization',
+    credibility: 'Post-sale efficiency',
+    bio: 'Guides operational scaling and post-sale clinic performance, coaching new owners to achieve peak profitability.',
     image: '/images/dave.png'
   },
   {
     id: 'jodi-simard',
     name: 'Jodi Simard',
-    role: 'Co-founder, Renovate Operations',
-    credibility: 'Four Pillars alignment',
-    bio: 'Focuses on aligning practices with the Four Pillars framework, optimizing patient growth and team culture.',
+    role: 'Co-founder, Client Process & Systems',
+    credibility: 'Systems & client-facing process',
+    bio: 'Focuses on integrating client-facing systems and streamlining operational processes to guarantee smooth, friction-free ownership handovers.',
     image: '/images/jody.png'
   },
   {
     id: 'peter-ferguson',
     name: 'Peter Ferguson',
-    role: 'Co-founder, Sell Lead',
+    role: 'Co-founder, Practice Transition Lead',
     credibility: 'Succession & valuation',
-    bio: 'Leads the Sell division, helping podiatrists navigate successful career transitions, practice valuations, and exits.',
+    bio: 'Acts as the primary front-facing lead for practice transitions, guiding sellers through valuations, exit strategies, and confidential buyer matching.',
     image: '/images/peter.png?v=3'
   },
   {
     id: 'kathy-ferguson',
     name: 'Kathy Ferguson',
-    role: 'Co-founder, Sell Operations',
-    credibility: 'Transition planning',
-    bio: 'Specializes in transition planning, ensuring a smooth handoff and maximum value realization for practice owners.',
+    role: 'Co-founder, Assessment & Patient Acceptance',
+    credibility: 'Transition planning & clinical alignment',
+    bio: 'Leads clinical practice assessments and patient acceptance protocols, ensuring structured, high-retention transitions for patient care.',
     image: '/images/kathy.png?v=3'
   }
 ];
@@ -267,16 +312,16 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: 't1',
     name: 'Dr. Sarah Jenkins',
-    role: 'Retired Chiropodist',
+    role: 'Retired Podiatrist',
     clinic: 'Southwestern Ontario',
-    content: 'After 28 years, I didn’t know where to start. FHN coordinated my accountant and lawyer, found a serious buyer, and my staff never heard a whisper until the day I chose to tell them.'
+    content: 'After 28 years, I didn’t know where to start. They coordinated my accountant and lawyer, found a serious buyer, and my staff never heard a whisper until the day I chose to tell them.'
   },
   {
     id: 't2',
     name: 'Michael Chen',
     role: 'Operating Partner',
     clinic: 'Private Investment Group',
-    content: 'We acquired two clinics through FHN’s network. Their Build team brought our first clinic online and the Four Pillars coaching took margins up within the first year.'
+    content: 'We acquired two clinics through their transition network. Their team brought our first clinic online under new ownership and their transition coaching took margins up within the first year.'
   },
   {
     id: 't3',

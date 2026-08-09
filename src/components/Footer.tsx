@@ -19,7 +19,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                <BrandLogo className="h-16" isDark={true} />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Canada's practice transition advisory for chiropodists and podiatrists — confidentially connecting sellers and buyers, and supporting new owners from acquisition to profitability.
+              Canada's practice transition advisory for podiatrists — confidentially connecting sellers and buyers, and supporting new owners throughout the 3-to-5 year transition window.
             </p>
             <div className="flex gap-4">
               {/* Social placeholders */}
@@ -88,13 +88,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         <p className="text-slate-600 text-xs leading-relaxed mb-8 max-w-3xl">
-          The Foot Health Network is a practice transition advisory and consulting firm. We are not a licensed
+          Chrysalis Practice Partners is an operating brand of The Foot Health Network, a practice transition advisory and consulting firm. We are not a licensed
           real estate or business brokerage. Transactions are formalized by each party's licensed accounting
           and legal professionals.
         </p>
 
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} The Foot Health Network. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Chrysalis Practice Partners. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <span className="hover:text-white cursor-pointer transition-colors">Privacy Policy</span>
             <span className="hover:text-white cursor-pointer transition-colors">Terms of Service</span>

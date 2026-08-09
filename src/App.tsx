@@ -10,7 +10,7 @@ import { OpportunitiesView } from './components/OpportunitiesView';
 import { BuyersView } from './components/BuyersView';
 import { HowItWorksView } from './components/HowItWorksView';
 import { PageView } from './types';
-import { DIVISIONS, TESTIMONIALS, PILLARS, HERO_CONTENT, OPPORTUNITIES, MARKET_STATS } from './constants';
+import { DIVISIONS, TESTIMONIALS, PILLARS, HERO_CONTENT, OPPORTUNITIES, MARKET_STATS, TRANSITION_STAGES } from './constants';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<PageView>(PageView.HOME);
@@ -74,92 +74,60 @@ function App() {
     </div>
   );
 
-  const DivisionsPreview = () => (
+  const TransitionLifecycle = () => (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">One Transition. Three Teams.</h2>
+          <span className="inline-block px-4 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-sm font-bold tracking-wider uppercase mb-6">
+            The Transition Window
+          </span>
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">
+            Guiding You Through Every Phase
+          </h2>
           <p className="text-lg text-slate-600 leading-relaxed">
-            Every practice sale creates a new owner. Our Sell team guides the exit, our Build team brings
-            the clinic online under new ownership, and our Renovate team coaches it to peak profitability.
+            A successful practice sale is not a single event — it is a multi-year journey. 
+            We focus on the 3-to-5 years either side of a transaction to secure your legacy and ensure long-term clinical and financial success.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 relative">
-          <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-slate-200 -z-10"></div>
-
-          {DIVISIONS.map((division) => (
-            <div key={division.id} className="relative group">
-              <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 h-full flex flex-col items-center text-center">
-                <div className="absolute -top-6 bg-emerald-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl shadow-lg ring-4 ring-white">
-                  {division.step}
+        <div className="grid lg:grid-cols-3 gap-8 relative max-w-6xl mx-auto">
+          {TRANSITION_STAGES.map((stage) => (
+            <div key={stage.id} className="relative group">
+              <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 h-full flex flex-col">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="p-4 bg-emerald-50 rounded-2xl text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
+                    {renderIcon(stage.iconName, "w-8 h-8")}
+                  </div>
+                  <span className="text-sm font-extrabold text-slate-300 group-hover:text-emerald-500 transition-colors uppercase tracking-widest">
+                    Stage {stage.step}
+                  </span>
                 </div>
-                
-                <div className="mt-8 mb-6 p-4 bg-emerald-50 rounded-2xl text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
-                  {renderIcon(division.iconName, "w-10 h-10")}
-                </div>
 
-                <h3 className="text-2xl font-bold text-slate-900 mb-2 tracking-tight">{division.title}</h3>
-                <p className="text-slate-500 font-medium mb-6 uppercase text-xs tracking-wider">{division.summary}</p>
+                <h3 className="text-2xl font-bold text-slate-900 mb-1 tracking-tight">{stage.title}</h3>
+                <p className="text-emerald-600 font-bold text-sm mb-4">{stage.subtitle}</p>
+                <p className="text-slate-500 text-sm mb-6 leading-relaxed">{stage.summary}</p>
                 
-                <div className="space-y-3 w-full text-left mt-auto">
-                   {division.services.slice(0, 2).map((s, idx) => (
-                     <div key={idx} className="flex items-start gap-2 text-sm text-slate-600">
+                <div className="space-y-3 mt-auto pt-6 border-t border-slate-200/60">
+                   {stage.points.map((point, idx) => (
+                     <div key={idx} className="flex items-start gap-2.5 text-sm text-slate-700">
                         <Icons.CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 shrink-0" />
-                        <span className="line-clamp-2">{s.title}</span>
+                        <span>{point}</span>
                      </div>
                    ))}
-                   {division.services.length > 2 && (
-                     <div className="text-center pt-2 text-sm text-slate-400 italic">
-                       + {division.services.length - 2} more modules
-                     </div>
-                   )}
                 </div>
-
-                <button 
-                  onClick={() => setCurrentPage(PageView.SERVICES)}
-                  className="mt-8 w-full py-3 rounded-xl bg-slate-50 text-slate-900 font-semibold group-hover:bg-black group-hover:text-white transition-colors"
-                >
-                  View Details
-                </button>
               </div>
             </div>
           ))}
         </div>
-      </div>
-    </section>
-  );
 
-  const PillarsSection = () => (
-    <section className="py-24 bg-slate-50">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">The 4 Pillars of a Thriving Practice</h2>
-          <p className="text-lg text-slate-600 leading-relaxed">
-            Regardless of your stage—whether building, renovating, or selling—we ensure your success by solidifying these four foundational pillars of business.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {PILLARS.map((pillar) => (
-            <div key={pillar.id} className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-lg transition-all duration-300">
-              <div className="mb-6 p-3 bg-emerald-50 rounded-xl inline-block text-emerald-600">
-                {renderIcon(pillar.iconName, "w-8 h-8")}
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">{pillar.title}</h3>
-              <p className="text-slate-500 text-sm mb-6 leading-relaxed">
-                {pillar.description}
-              </p>
-              <ul className="space-y-3">
-                {pillar.objectives.map((obj, i) => (
-                  <li key={i} className="flex gap-2 text-sm text-slate-700">
-                    <Icons.CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                    <span>{obj}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="text-center mt-16">
+          <button 
+            onClick={() => setCurrentPage(PageView.SERVICES)}
+            className="px-8 py-3.5 bg-slate-900 text-white rounded-full font-semibold hover:bg-emerald-600 transition-all shadow-lg flex items-center justify-center gap-2 mx-auto group"
+          >
+            <span>Learn How We Support Your Transition</span>
+            <Icons.ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          </button>
         </div>
       </div>
     </section>
@@ -211,8 +179,7 @@ function App() {
     <div className="animate-fade-in">
       <HeroSection />
       <FeaturedOpportunities />
-      <DivisionsPreview />
-      <PillarsSection />
+      <TransitionLifecycle />
 
       <div className="bg-slate-900 py-16 text-white">
         <div className="container mx-auto px-4 lg:px-8">
@@ -240,7 +207,7 @@ function App() {
                 <div className="space-y-6">
                   {[
                     "Confidential from the first call — your staff and patients hear nothing until you decide.",
-                    "Coast-to-coast: chiropody and podiatry practices across every province.",
+                    "Coast-to-coast: podiatry practices across every province.",
                     "Support beyond the sale: we set the new owner up to protect your legacy."
                   ].map((item, i) => (
                     <div key={i} className="flex gap-4 items-start">
@@ -261,9 +228,9 @@ function App() {
              <div className="relative">
                 <div className="absolute -inset-4 bg-emerald-500 rounded-3xl -rotate-2 opacity-10"></div>
                 <img 
-                  src="https://picsum.photos/seed/businessmeeting/800/600" 
-                  alt="Consulting Team" 
-                  className="relative rounded-2xl shadow-2xl w-full grayscale hover:grayscale-0 transition-all duration-500"
+                  src="/images/chrysalis-prototype.png" 
+                  alt="Chrysalis Practice Partners Prototype Screenshot" 
+                  className="relative rounded-2xl shadow-2xl w-full border border-slate-200 hover:scale-[1.02] transition-all duration-500"
                 />
              </div>
           </div>
@@ -301,10 +268,9 @@ function App() {
     <div className="pt-24 pb-20 animate-fade-in bg-slate-50">
        <div className="bg-black text-white py-24 mb-16">
           <div className="container mx-auto px-4 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Trademarked Frameworks</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Coordinated Transition Frameworks</h1>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              Three teams covering the full arc of a practice transition: the seller's exit,
-              the buyer's launch, and the new owner's path to profitability.
+              While our transition team operates as a single unified unit, we draw on these three trademarked internal frameworks to structure our operational support throughout the transition lifecycle.
             </p>
           </div>
        </div>
@@ -318,7 +284,7 @@ function App() {
                        <span className="text-3xl font-bold">{division.step}</span>
                     </div>
                     <div>
-                       <h2 className="text-4xl font-bold text-slate-900">{division.title}</h2>
+                       <h2 className="text-4xl font-bold text-slate-900">{division.title} Module</h2>
                        <p className="text-emerald-600 font-medium text-lg">{division.summary}</p>
                     </div>
                   </div>
@@ -343,7 +309,7 @@ function App() {
                      onClick={() => setCurrentPage(PageView.CONTACT)}
                      className="inline-flex items-center gap-2 text-emerald-700 font-bold hover:gap-3 transition-all"
                   >
-                    Get started with {division.title} <Icons.ArrowRight size={20} />
+                    Get started with {division.title} support <Icons.ArrowRight size={20} />
                   </button>
                </div>
 
@@ -354,11 +320,11 @@ function App() {
                          <div className="w-32 h-32 mx-auto bg-emerald-100 rounded-full flex items-center justify-center mb-8">
                            {renderIcon(division.iconName, "w-16 h-16 text-emerald-600")}
                          </div>
-                         <h3 className="text-3xl font-bold text-slate-900 mb-4">{division.title} Phase</h3>
+                         <h3 className="text-3xl font-bold text-slate-900 mb-4">{division.title} Operational Support</h3>
                          <p className="text-slate-500 max-w-sm mx-auto">
-                            {division.id === 'building' && "For buyers and new owners: licensing, team setup, and patient acquisition to bring your acquired clinic online."}
-                            {division.id === 'renovating' && "For new owners and operating partners: the Four Pillars — scheduling, marketing, money management, staffing."}
-                            {division.id === 'selling' && "For sellers: valuation, exit strategy, buyer matching, and succession planning."}
+                            {division.id === 'building' && "For buyers and new owners: licensing, team setup, and patient acquisition to bring your acquired clinic online smoothly."}
+                            {division.id === 'renovating' && "For new owners and operating partners: our internal Four Pillars framework — scheduling, marketing, money management, staffing."}
+                            {division.id === 'selling' && "For sellers: valuation audit, exit strategy, gated buyer matching, and clean succession planning."}
                          </p>
                          {division.id === 'selling' && (
                            <div className="absolute top-8 right-8 rotate-12 bg-red-600 text-white px-6 py-2 font-bold text-xl rounded-lg border-2 border-white shadow-xl">

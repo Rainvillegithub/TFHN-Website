@@ -11,6 +11,16 @@ export interface SubService {
   description: string;
 }
 
+export interface TransitionStage {
+  id: string;
+  title: string;
+  subtitle: string;
+  step: string;
+  iconName: string;
+  summary: string;
+  points: string[];
+}
+
 export interface Division {
   id: string;
   title: string;
