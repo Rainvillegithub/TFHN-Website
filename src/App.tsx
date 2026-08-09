@@ -23,48 +23,70 @@ function App() {
 
   const HeroSection = () => (
     <div className="relative min-h-[85vh] md:min-h-[90vh] flex items-center pt-16 overflow-hidden bg-black">
+      {/* Background with Hallway photo and gradient */}
       <div className="absolute inset-0 z-0">
         <img 
           src={HERO_CONTENT.backgroundImage}
           alt="Clinic Background" 
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-35"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+        {/* Subtle decorative glows behind the logo */}
+        <div className="absolute right-[10%] top-1/4 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-[100px] -z-10 animate-pulse"></div>
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="max-w-2xl space-y-6 animate-fade-in-up">
-          
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
-            {HERO_CONTENT.title} <span className="text-emerald-500">{HERO_CONTENT.highlight}</span>
-          </h1>
-          
-          <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl">
-             {HERO_CONTENT.description}
-          </p>
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          {/* Left Column: Content */}
+          <div className="lg:col-span-7 space-y-6 animate-fade-in-up">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
+              {HERO_CONTENT.title} <span className="text-emerald-500">{HERO_CONTENT.highlight}</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl">
+               {HERO_CONTENT.description}
+            </p>
 
-          <div className="flex items-center gap-2 text-emerald-500/90 font-medium text-sm md:text-base animate-fade-in">
-            <Icons.ShieldCheck size={18} />
-            <span>Confidential practice successions, coast to coast</span>
+            <div className="flex items-center gap-2 text-emerald-500/90 font-medium text-sm md:text-base animate-fade-in">
+              <Icons.ShieldCheck size={18} />
+              <span>Confidential practice successions, coast to coast</span>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <button
+                onClick={() => setCurrentPage(PageView.CONTACT)}
+                className="px-6 py-3.5 bg-emerald-600 text-white rounded-full font-semibold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/25 flex items-center justify-center gap-2 group"
+              >
+                <Icons.Key size={18} />
+                {HERO_CONTENT.buttonPrimary}
+                <Icons.ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button
+                 onClick={() => setCurrentPage(PageView.BUYERS)}
+                className="px-6 py-3.5 bg-white text-emerald-900 rounded-full font-semibold hover:bg-emerald-50 transition-all shadow-lg flex items-center justify-center gap-2 group"
+              >
+                <Icons.Briefcase size={18} />
+                {HERO_CONTENT.buttonSecondary}
+                <Icons.ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <button
-              onClick={() => setCurrentPage(PageView.CONTACT)}
-              className="px-6 py-3.5 bg-emerald-600 text-white rounded-full font-semibold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/25 flex items-center justify-center gap-2 group"
-            >
-              <Icons.Key size={18} />
-              {HERO_CONTENT.buttonPrimary}
-              <Icons.ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button
-               onClick={() => setCurrentPage(PageView.BUYERS)}
-              className="px-6 py-3.5 bg-white text-emerald-900 rounded-full font-semibold hover:bg-emerald-50 transition-all shadow-lg flex items-center justify-center gap-2 group"
-            >
-              <Icons.Briefcase size={18} />
-              {HERO_CONTENT.buttonSecondary}
-              <Icons.ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </button>
+          {/* Right Column: Large, Beautiful Chrysalis Logo */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end animate-fade-in delay-200">
+            <div className="relative group p-6">
+              {/* Soft organic glowing gradient border */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-[32px] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+              
+              <div className="relative bg-slate-950/40 backdrop-blur-xl border border-white/10 rounded-[32px] p-8 md:p-12 shadow-2xl flex items-center justify-center max-w-[420px]">
+                <img 
+                  src="/images/chrysalis-logo-top.png" 
+                  alt="Chrysalis Practice Partners Logo" 
+                  className="w-full h-auto object-contain brightness-0 invert filter drop-shadow-[0_0_20px_rgba(16,185,129,0.3)] animate-pulse"
+                  style={{ animationDuration: '4s' }}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
