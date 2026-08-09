@@ -34,9 +34,6 @@ function App() {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-2xl space-y-6 animate-fade-in-up">
-          <div className="inline-block mb-2">
-             <BrandLogo className="h-16 md:h-20 w-auto" isDark={true} />
-          </div>
           
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
             {HERO_CONTENT.title} <span className="text-emerald-500">{HERO_CONTENT.highlight}</span>
