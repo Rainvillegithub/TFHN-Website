@@ -11,15 +11,14 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   isDark = false,
   showText = true 
 }) => {
-  // Use the top cropped logo for standard light backgrounds
-  // Use the bottom cropped logo for dark backgrounds (or vice-versa)
-  const logoSrc = isDark ? "/images/chrysalis-logo-bottom.png" : "/images/chrysalis-logo-top.png";
+  // Always use the top logo (the dominant master logo)
+  const logoSrc = "/images/chrysalis-logo-top.png";
 
   return (
     <img 
       src={logoSrc} 
       alt="Chrysalis Practice Partners Logo" 
-      className={`${className} object-contain transition-transform duration-300 hover:scale-105`}
+      className={`${className} object-contain transition-transform duration-300 hover:scale-105 ${isDark ? 'brightness-0 invert' : ''}`}
     />
   );
 };
