@@ -32,9 +32,10 @@ export const ContactView: React.FC = () => {
       // 0. Catalogue the lead in Supabase (skipped silently if not configured)
       const sbUrl = import.meta.env.VITE_SUPABASE_URL;
       const sbKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+      let catalogued = false;
       if (sbUrl && sbKey) {
         try {
-          await fetch(`${sbUrl}/rest/v1/leads`, {
+          const sbRes = await fetch(`${sbUrl}/rest/v1/leads`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -52,6 +53,7 @@ export const ContactView: React.FC = () => {
               work_type: isProviderMatch ? workType : null,
             }),
           });
+          catalogued = sbRes.ok;
         } catch (sbError) {
           console.error('Supabase catalogue error:', sbError);
         }
@@ -105,7 +107,9 @@ export const ContactView: React.FC = () => {
         });
 
         if (!response.ok) {
-          throw new Error('Failed to send email submission.');
+          // The lead is safe in Supabase; don't tell the visitor it failed.
+          if (!catalogued) throw new Error('Failed to send email submission.');
+          console.warn('Email notification failed, but the lead was catalogued in Supabase.');
         }
       } else {
         console.warn(
