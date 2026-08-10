@@ -96,14 +96,43 @@ export const ContactView: React.FC = () => {
   return (
     <div className="pt-24 pb-20 animate-fade-in bg-slate-50 min-h-screen">
       <div className="container mx-auto px-4 lg:px-8">
+        {/* Provider Match — capacity is the market's real bottleneck */}
+        <div className="max-w-6xl mx-auto mb-12 bg-slate-900 text-white rounded-3xl p-10 md:p-12 relative overflow-hidden">
+          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-72 h-72 bg-emerald-500/15 rounded-full blur-3xl"></div>
+          <div className="relative z-10 md:flex items-center gap-10">
+            <div className="flex-1">
+              <span className="inline-block px-3 py-1 bg-emerald-500/15 text-emerald-400 rounded-full text-xs font-bold tracking-wider uppercase mb-4">Provider Match</span>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">A practice is only as strong as the providers inside it.</h2>
+              <p className="text-slate-300 leading-relaxed">
+                In big markets most clinicians work as independent contractors; in smaller communities
+                practices run on long-term employees — and every practice changing hands needs people.
+                We match providers with practice owners across Canada: full-time, part-time,
+                independent contract, or locum coverage.
+              </p>
+            </div>
+            <div className="mt-8 md:mt-0 shrink-0 flex flex-col gap-3">
+              {[
+                'Practices: tell us who you need',
+                'Providers: tell us where and how you want to work',
+                'We make the confidential introduction'
+              ].map((line, i) => (
+                <div key={i} className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-5 py-3">
+                  <Icons.CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
+                  <span className="text-slate-200 font-medium text-sm">{line}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 flex flex-col md:flex-row">
            {/* Info Side */}
            <div className="bg-black text-white p-12 md:w-2/5 flex flex-col justify-between">
               <div>
                 <h2 className="text-3xl font-bold mb-6">Let's Connect</h2>
                 <p className="text-slate-300 mb-12">
-                  Selling, buying, or operating — every conversation starts confidentially.
-                  Your staff and patients hear nothing until you decide.
+                  Selling, buying, hiring, or looking for a position — every conversation starts
+                  confidentially. Your staff and patients hear nothing until you decide.
                 </p>
                 <div className="space-y-6">
                    <div className="flex items-center gap-4 group cursor-pointer">
@@ -138,7 +167,7 @@ export const ContactView: React.FC = () => {
            {/* Form Side */}
            <div className="p-12 md:w-3/5 bg-white">
               <h3 className="text-2xl font-bold text-slate-900 mb-2">Send us a message</h3>
-              <p className="text-slate-500 mb-8">Tell us whether you're looking to sell, buy, or grow.</p>
+              <p className="text-slate-500 mb-8">Tell us whether you're looking to sell, buy, hire, or find a position.</p>
               
               {status === 'success' && (
                 <div className="mb-6 p-4 bg-emerald-50 text-emerald-800 rounded-2xl border border-emerald-100 flex items-center gap-3">
@@ -206,8 +235,9 @@ export const ContactView: React.FC = () => {
                        <option>Selling my practice</option>
                        <option>Buying a practice</option>
                        <option>Inquiring about a featured opportunity</option>
-                       <option>Building (bringing a new clinic online)</option>
-                       <option>Renovating (profitability coaching)</option>
+                       <option>I need a provider for my practice (hiring)</option>
+                       <option>I'm a provider looking for a position</option>
+                       <option>New-owner support (launch & profitability coaching)</option>
                        <option>Other Inquiry</option>
                      </select>
                   </div>

@@ -70,6 +70,14 @@ function App() {
                 {HERO_CONTENT.buttonSecondary}
                 <Icons.ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
+              <button
+                onClick={() => setCurrentPage(PageView.CONTACT)}
+                className="px-6 py-3.5 bg-white/10 border border-white/25 text-white rounded-full font-semibold hover:bg-white/20 transition-all shadow-lg flex items-center justify-center gap-2 group backdrop-blur-sm"
+              >
+                <Icons.Users size={18} />
+                Provider Match
+                <Icons.ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </button>
             </div>
           </div>
 

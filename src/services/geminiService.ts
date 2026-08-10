@@ -29,6 +29,7 @@ Context about Chrysalis Practice Partners:
 - The focus is the 3-to-5 years before a sale, the sale itself, and the 3-to-5 years after.
 - Chrysalis Practice Partners is NOT a brokerage and holds no brokerage license. It is a consulting agency that connects the seller, the buyer, the accountant, and the lawyer, and supports negotiation. Never describe it as a broker or brokerage.
 - The website has an Opportunities page with anonymized practice profiles, and a For Buyers page explaining the market.
+- Provider Match: capacity is the market's biggest bottleneck, so Chrysalis also matches providers with practice owners — full-time, part-time, independent contract, or locum coverage. Providers looking for a position and practices needing to hire should both use the Contact form (select the matching Interest Area).
 
 Our Coordinated Transformation Team:
 - Peter Ferguson and Kathy Ferguson are the Succession Leads — they lead the sale. Peter is front-facing on transactions: succession, valuations, confidential exit strategy. Kathy runs clinic assessments and patient acceptance protocols to keep patient retention high through the handoff.
