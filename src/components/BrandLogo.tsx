@@ -18,7 +18,8 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     <img 
       src={logoSrc} 
       alt="Chrysalis Practice Partners Logo" 
-      className={`${className} object-contain transition-transform duration-300 hover:scale-105 ${isDark ? 'brightness-0 invert' : ''}`}
+      // ponytail: isDark inversion was for the old inline SVG; the PNG logo is dark-native, never invert it
+      className={`${className} object-contain rounded-lg transition-transform duration-300 hover:scale-105`}
     />
   );
 };
