@@ -149,8 +149,8 @@ export const ContactView: React.FC = () => {
                         <Icons.MapPin size={20} className="text-emerald-500 group-hover:text-white transition-colors" />
                      </div>
                      <div>
-                       <div className="text-xs text-slate-400 uppercase tracking-wide">Headquarters</div>
-                       <div className="font-medium">Timmins, Ontario</div>
+                       <div className="text-xs text-slate-400 uppercase tracking-wide">Where We Work</div>
+                       <div className="font-medium">Canada-wide — online, wherever you practice</div>
                      </div>
                    </div>
                 </div>

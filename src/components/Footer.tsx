@@ -77,7 +77,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <ul className="space-y-4 text-slate-400">
               <li className="flex items-start gap-3">
                 <Icons.MapPin className="mt-1 text-emerald-500 shrink-0" size={18} />
-                <span>Timmins, Ontario</span>
+                <span>Serving practices Canada-wide</span>
               </li>
               <li className="flex items-center gap-3">
                 <Icons.Mail className="text-emerald-500 shrink-0" size={18} />
