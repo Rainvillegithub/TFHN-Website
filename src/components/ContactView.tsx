@@ -81,7 +81,7 @@ export const ContactView: React.FC = () => {
         console.warn('Mailchimp submission skipped: VITE_MAILCHIMP_SUBSCRIBE_URL is not set.');
       }
 
-      // 2. Send email to info@tfhn.ca
+      // 2. Send email to info@thefoothealthnetwork.ca
       const emailFormUrl = import.meta.env.VITE_EMAIL_FORM_URL || 'https://api.web3forms.com/submit';
       const web3FormsKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
@@ -183,7 +183,7 @@ export const ContactView: React.FC = () => {
                      </div>
                      <div>
                        <div className="text-xs text-slate-400 uppercase tracking-wide">Email</div>
-                       <div className="font-medium">info@tfhn.ca</div>
+                       <div className="font-medium">info@thefoothealthnetwork.ca</div>
                      </div>
                    </div>
                     <div className="flex items-center gap-4 group cursor-pointer">

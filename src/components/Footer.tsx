@@ -81,7 +81,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li className="flex items-center gap-3">
                 <Icons.Mail className="text-emerald-500 shrink-0" size={18} />
-                <span>info@tfhn.ca</span>
+                <span>info@thefoothealthnetwork.ca</span>
               </li>
             </ul>
           </div>
