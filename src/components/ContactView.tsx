@@ -7,8 +7,15 @@ export const ContactView: React.FC = () => {
   const [email, setEmail] = useState('');
   const [interestArea, setInterestArea] = useState('Selling my practice');
   const [message, setMessage] = useState('');
+  const [discipline, setDiscipline] = useState('');
+  const [province, setProvince] = useState('');
+  const [workType, setWorkType] = useState('Full-time');
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+
+  const isProviderMatch =
+    interestArea === 'I need a provider for my practice (hiring)' ||
+    interestArea === "I'm a provider looking for a position";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,6 +29,34 @@ export const ContactView: React.FC = () => {
     setErrorMessage('');
 
     try {
+      // 0. Catalogue the lead in Supabase (skipped silently if not configured)
+      const sbUrl = import.meta.env.VITE_SUPABASE_URL;
+      const sbKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+      if (sbUrl && sbKey) {
+        try {
+          await fetch(`${sbUrl}/rest/v1/leads`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              apikey: sbKey,
+              Authorization: `Bearer ${sbKey}`,
+            },
+            body: JSON.stringify({
+              first_name: firstName,
+              last_name: lastName,
+              email,
+              interest_area: interestArea,
+              message,
+              discipline: isProviderMatch ? discipline : null,
+              province: isProviderMatch ? province : null,
+              work_type: isProviderMatch ? workType : null,
+            }),
+          });
+        } catch (sbError) {
+          console.error('Supabase catalogue error:', sbError);
+        }
+      }
+
       // 1. Submit to Mailchimp CRM
       const mailchimpUrl = import.meta.env.VITE_MAILCHIMP_SUBSCRIBE_URL;
       if (mailchimpUrl) {
@@ -53,7 +88,7 @@ export const ContactView: React.FC = () => {
           name: `${firstName} ${lastName}`,
           email: email,
           subject: `TFHN Contact Form - ${interestArea}`,
-          message: `Name: ${firstName} ${lastName}\nEmail: ${email}\nInterest Area: ${interestArea}\n\nMessage:\n${message}`,
+          message: `Name: ${firstName} ${lastName}\nEmail: ${email}\nInterest Area: ${interestArea}${isProviderMatch ? `\nDiscipline: ${discipline}\nProvince: ${province}\nWork Type: ${workType}` : ''}\n\nMessage:\n${message}`,
         };
 
         if (web3FormsKey) {
@@ -86,6 +121,9 @@ export const ContactView: React.FC = () => {
       setEmail('');
       setInterestArea('Selling my practice');
       setMessage('');
+      setDiscipline('');
+      setProvince('');
+      setWorkType('Full-time');
     } catch (error: any) {
       console.error('Contact Form Error:', error);
       setErrorMessage(error.message || 'An unexpected error occurred. Please try again.');
@@ -241,6 +279,46 @@ export const ContactView: React.FC = () => {
                        <option>Other Inquiry</option>
                      </select>
                   </div>
+                 {isProviderMatch && (
+                   <div className="grid md:grid-cols-3 gap-6 animate-fade-in">
+                      <div className="space-y-2">
+                         <label className="text-sm font-semibold text-slate-700">Discipline</label>
+                         <input
+                           type="text"
+                           value={discipline}
+                           onChange={(e) => setDiscipline(e.target.value)}
+                           className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all"
+                           placeholder="e.g. Chiropody, Physio"
+                         />
+                      </div>
+                      <div className="space-y-2">
+                         <label className="text-sm font-semibold text-slate-700">Province</label>
+                         <select
+                           value={province}
+                           onChange={(e) => setProvince(e.target.value)}
+                           className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all bg-white"
+                         >
+                           <option value="">Select…</option>
+                           {['Alberta','British Columbia','Manitoba','New Brunswick','Newfoundland and Labrador','Nova Scotia','Ontario','Prince Edward Island','Quebec','Saskatchewan'].map(p => (
+                             <option key={p}>{p}</option>
+                           ))}
+                         </select>
+                      </div>
+                      <div className="space-y-2">
+                         <label className="text-sm font-semibold text-slate-700">Work Type</label>
+                         <select
+                           value={workType}
+                           onChange={(e) => setWorkType(e.target.value)}
+                           className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all bg-white"
+                         >
+                           <option>Full-time</option>
+                           <option>Part-time</option>
+                           <option>Independent contract</option>
+                           <option>Locum</option>
+                         </select>
+                      </div>
+                   </div>
+                 )}
                  <div className="space-y-2">
                     <label className="text-sm font-semibold text-slate-700">How can we help? *</label>
                     <textarea 
