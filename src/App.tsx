@@ -11,7 +11,7 @@ import { BuyersView } from './components/BuyersView';
 import { HowItWorksView } from './components/HowItWorksView';
 import { MetamorphosisShowcase } from './components/MetamorphosisShowcase';
 import { PageView } from './types';
-import { DIVISIONS, TESTIMONIALS, PILLARS, HERO_CONTENT, OPPORTUNITIES, MARKET_STATS, TRANSFORMATION_STAGES } from './constants';
+import { TESTIMONIALS, HERO_CONTENT, OPPORTUNITIES, MARKET_STATS, TRANSFORMATION_STAGES } from './constants';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<PageView>(PageView.HOME);
@@ -133,7 +133,7 @@ function App() {
             onClick={() => setCurrentPage(PageView.SERVICES)}
             className="px-8 py-3.5 bg-slate-900 text-white rounded-full font-semibold hover:bg-emerald-600 transition-all shadow-lg flex items-center justify-center gap-2 mx-auto group"
           >
-            <span>Learn How We Support Your Transformation</span>
+            <span>Find Your Successor — See How We Get You Out</span>
             <Icons.ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
@@ -272,96 +272,110 @@ function App() {
     </div>
   );
 
-  const ServicesView = () => (
-    <div className="pt-24 pb-20 animate-fade-in bg-slate-50">
-       <div className="bg-black text-white py-24 mb-16">
+  const ServicesView = () => {
+    const sellerPromises = [
+      {
+        iconName: 'Users',
+        title: 'We find the provider who carries it on',
+        text: 'Your patients need a new clinician, not a corporate landlord. We confidentially match your practice with vetted providers and capital — gated, anonymized, and shared only with qualified, serious buyers.'
+      },
+      {
+        iconName: 'Lock',
+        title: 'Nobody hears a whisper until you decide',
+        text: 'Staff, patients, and competitors learn about your sale exactly when you choose — and not a moment sooner. Every conversation starts confidential and stays that way.'
+      },
+      {
+        iconName: 'CircleDollarSign',
+        title: 'You leave with what your life\'s work is worth',
+        text: 'Valuation prep before buyers ever look means no surprises in due diligence — clean financials, a defensible price, and negotiation support through to a signed close.'
+      },
+      {
+        iconName: 'Key',
+        title: 'You choose how you exit',
+        text: 'Walk away at close, stay on as an associate, or transition gradually — we structure the deal around the retirement you actually want.'
+      }
+    ];
+
+    return (
+      <div className="pt-24 pb-20 animate-fade-in bg-slate-50">
+        <div className="bg-black text-white py-24 mb-16">
           <div className="container mx-auto px-4 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Coordinated Transformation Frameworks</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Your Successor. Your Exit.</h1>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              While our transformation team operates as a single unified unit, we draw on these three trademarked internal frameworks to structure our operational support throughout the practice lifecycle.
+              You spent a career building your practice. When it's time to step away, only two things
+              really matter: finding the right provider to care for your patients — and getting out
+              on your terms. That's what we do.
             </p>
           </div>
-       </div>
+        </div>
 
-       <div className="container mx-auto px-4 lg:px-8 space-y-24">
-          {DIVISIONS.map((division, index) => (
-            <div key={division.id} className={`flex flex-col ${index % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 lg:gap-24 items-start`}>
-               <div className="flex-1 space-y-8">
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shadow-lg shadow-emerald-600/20">
-                       <span className="text-3xl font-bold">{division.step}</span>
-                    </div>
-                    <div>
-                       <h2 className="text-4xl font-bold text-slate-900">{division.title} Module</h2>
-                       <p className="text-emerald-600 font-medium text-lg">{division.summary}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="grid gap-6">
-                    {division.services.map((service, sIndex) => (
-                      <div key={sIndex} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="flex gap-4">
-                           <div className="mt-1">
-                              <Icons.CheckCircle2 className="text-emerald-500 w-6 h-6" />
-                           </div>
-                           <div>
-                             <h3 className="text-lg font-bold text-slate-900 mb-2">{service.title}</h3>
-                             <p className="text-slate-600 leading-relaxed">{service.description}</p>
-                           </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <button 
-                     onClick={() => setCurrentPage(PageView.CONTACT)}
-                     className="inline-flex items-center gap-2 text-emerald-700 font-bold hover:gap-3 transition-all"
-                  >
-                    Get started with {division.title} support <Icons.ArrowRight size={20} />
-                  </button>
-               </div>
-
-               <div className="flex-1 w-full sticky top-32">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-white aspect-[4/5] md:aspect-square flex items-center justify-center p-8 border border-slate-100">
-                      <div className="absolute inset-0 bg-slate-50"></div>
-                      <div className="relative z-10 text-center">
-                         <div className="w-32 h-32 mx-auto bg-emerald-100 rounded-full flex items-center justify-center mb-8">
-                           {renderIcon(division.iconName, "w-16 h-16 text-emerald-600")}
-                         </div>
-                         <h3 className="text-3xl font-bold text-slate-900 mb-4">{division.title} Operational Support</h3>
-                         <p className="text-slate-500 max-w-sm mx-auto">
-                            {division.id === 'building' && "For buyers and new owners: licensing, team setup, and patient acquisition to bring your acquired clinic online smoothly."}
-                            {division.id === 'renovating' && "For new owners and operating partners: our internal Four Pillars framework — scheduling, marketing, money management, staffing."}
-                            {division.id === 'selling' && "For sellers: valuation audit, exit strategy, gated buyer matching, and clean succession planning."}
-                         </p>
-                         {division.id === 'selling' && (
-                           <div className="absolute top-8 right-8 rotate-12 bg-red-600 text-white px-6 py-2 font-bold text-xl rounded-lg border-2 border-white shadow-xl">
-                             SOLD
-                           </div>
-                         )}
-                      </div>
-                  </div>
-               </div>
-            </div>
-          ))}
-       </div>
-
-       <div className="container mx-auto px-4 lg:px-8 mt-24">
-          <div className="bg-emerald-600 rounded-3xl p-12 text-center text-white">
-             <h2 className="text-3xl font-bold mb-6">Not sure which stage you're in?</h2>
-             <p className="text-emerald-100 mb-8 max-w-2xl mx-auto">
-               Most practices have elements of all three. Schedule a free practice audit to identify your biggest opportunities.
-             </p>
-             <button 
-                onClick={() => setCurrentPage(PageView.CONTACT)}
-                className="bg-white text-emerald-900 px-8 py-4 rounded-full font-bold hover:bg-emerald-50 transition-colors shadow-lg"
-             >
-               Book Your Free Audit
-             </button>
+        <div className="container mx-auto px-4 lg:px-8">
+          {/* The two things sellers care about */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-24">
+            {sellerPromises.map((item, idx) => (
+              <div key={idx} className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition-shadow">
+                <div className="mb-6 p-3 bg-emerald-50 rounded-xl inline-block text-emerald-600">
+                  {renderIcon(item.iconName, 'w-8 h-8')}
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{item.text}</p>
+              </div>
+            ))}
           </div>
-       </div>
-    </div>
-  );
+
+          {/* Quiet nod to the machinery — one block, no modules */}
+          <div className="max-w-5xl mx-auto mb-24 bg-white rounded-3xl border border-slate-200 p-10 md:p-12">
+            <div className="md:flex items-start gap-10">
+              <div className="flex-1">
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">And after you leave? Your legacy is protected.</h2>
+                <p className="text-slate-600 leading-relaxed mb-4">
+                  A sale only holds its value if the practice thrives under its new owner. Behind every
+                  succession, our Build and Renovate teams prepare the practice for transfer and coach
+                  the incoming provider — so your patients stay cared for, your staff stay employed,
+                  and your name stays respected in your community.
+                </p>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  That support runs on our internal frameworks for scheduling, marketing, financials, and
+                  staffing — you never need to learn them; you just see the result.
+                </p>
+              </div>
+              <div className="mt-8 md:mt-0 shrink-0 flex flex-col gap-3">
+                {['Patients keep their clinic', 'Staff keep their jobs', 'Buyers get a running start'].map((line, i) => (
+                  <div key={i} className="flex items-center gap-3 bg-slate-50 rounded-xl px-5 py-3">
+                    <Icons.CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
+                    <span className="text-slate-700 font-medium text-sm">{line}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="max-w-5xl mx-auto bg-slate-900 rounded-3xl p-12 text-center text-white">
+            <h2 className="text-3xl font-bold mb-4">Ready to meet your successor?</h2>
+            <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
+              Start with a free, confidential practice audit. We'll tell you what your practice is worth,
+              what would make it worth more, and who's looking for one like it.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                onClick={() => setCurrentPage(PageView.CONTACT)}
+                className="bg-emerald-600 text-white px-8 py-4 rounded-full font-bold hover:bg-emerald-700 transition-colors shadow-lg"
+              >
+                Book Your Free Audit
+              </button>
+              <button
+                onClick={() => setCurrentPage(PageView.HOW_IT_WORKS)}
+                className="bg-white/10 border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-colors"
+              >
+                See How a Sale Works
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-emerald-200 selection:text-emerald-900">
